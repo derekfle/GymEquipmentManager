@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="EquipmentManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Equipment.cpp">
-      <Filter>Equipment</Filter>
-    </ClCompile>
-    <ClCompile Include="Treadmill.cpp">
       <Filter>Equipment</Filter>
     </ClCompile>
     <ClCompile Include="RowingMachine.cpp">
       <Filter>Equipment</Filter>
     </ClCompile>
-    <ClCompile Include="EquipmentManager.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Equipment">
-      <UniqueIdentifier>{bb03b222-0b8b-41e3-ada7-b5170f97417c}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Equipment.h">
+    <ClCompile Include="Treadmill.cpp">
       <Filter>Equipment</Filter>
-    </ClInclude>
-    <ClInclude Include="Treadmill.h">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EquipmentManager.h" />
+    <ClInclude Include="Equipment.h">
       <Filter>Equipment</Filter>
     </ClInclude>
     <ClInclude Include="RowingMachine.h">
       <Filter>Equipment</Filter>
     </ClInclude>
-    <ClInclude Include="EquipmentManager.h" />
+    <ClInclude Include="Treadmill.h">
+      <Filter>Equipment</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Equipment">
+      <UniqueIdentifier>{3b7ed6e4-6708-4cc1-b70c-80a07e3350f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
