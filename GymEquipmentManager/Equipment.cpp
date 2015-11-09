@@ -1,6 +1,7 @@
 #include "Equipment.h"
 
-Equipment::Equipment()
+Equipment::Equipment() :
+	id(999)
 {
 }
 
