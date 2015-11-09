@@ -29,4 +29,7 @@
       <UniqueIdentifier>{3b7ed6e4-6708-4cc1-b70c-80a07e3350f1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="EquipmentManager.proto" />
+  </ItemGroup>
 </Project>

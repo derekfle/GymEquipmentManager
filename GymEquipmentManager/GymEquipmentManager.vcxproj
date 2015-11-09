@@ -49,6 +49,17 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
     </Link>
+    <CustomBuildStep>
+      <Command>"$(SolutionDir)protobuf\protoc.exe"  --proto_path="../GymEquipmentManager" --cpp_out="../GymEquipmentManager"  "../GymEquipmentManager/EquipmentManager.proto"</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Build /h/cpp for google protocol buffers</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>$(ProjectDir)EquipmentManager.pb.h;$(ProjectDir)EquipmentManager.pb.cc</Outputs>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -64,6 +75,17 @@
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Console</SubSystem>
     </Link>
+    <CustomBuildStep>
+      <Command>"$(SolutionDir)protobuf\protoc.exe"  --proto_path="../GymEquipmentManager" --cpp_out="../GymEquipmentManager"  "../GymEquipmentManager/EquipmentManager.proto"</Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>Build /h/cpp for google protocol buffers</Message>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Outputs>$(ProjectDir)EquipmentManager.pb.h;$(ProjectDir)EquipmentManager.pb.cc</Outputs>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Equipment.cpp" />
@@ -76,6 +98,13 @@
     <ClInclude Include="EquipmentManager.h" />
     <ClInclude Include="RowingMachine.h" />
     <ClInclude Include="Treadmill.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="EquipmentManager.proto">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </Text>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
