@@ -9,6 +9,9 @@
 class TreadmillReport : public EquipmentReport
 {
 public:
+
+	friend class EquipmentReportManager;
+
 	TreadmillReport();
 	TreadmillReport(const TreadmillReport &that);
 	~TreadmillReport();

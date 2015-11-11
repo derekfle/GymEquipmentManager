@@ -16,21 +16,23 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
+namespace proto {
+
 namespace {
 
-const ::google::protobuf::Descriptor* Treadmill_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  Treadmill_reflection_ = NULL;
-const ::google::protobuf::Descriptor* RowingMachine_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  RowingMachine_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Equipment_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Equipment_reflection_ = NULL;
 struct EquipmentOneofInstance {
-  const ::Treadmill* treadmill_;
-  const ::RowingMachine* rowingmachine_;
+  const ::proto::Equipment_Treadmill* treadmill_;
+  const ::proto::Equipment_RowingMachine* rowingmachine_;
 }* Equipment_default_oneof_instance_ = NULL;
+const ::google::protobuf::Descriptor* Equipment_Treadmill_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Equipment_Treadmill_reflection_ = NULL;
+const ::google::protobuf::Descriptor* Equipment_RowingMachine_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Equipment_RowingMachine_reflection_ = NULL;
 const ::google::protobuf::Descriptor* EquipmentCache_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   EquipmentCache_reflection_ = NULL;
@@ -44,42 +46,11 @@ void protobuf_AssignDesc_EquipmentManager_2eproto() {
     ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
       "EquipmentManager.proto");
   GOOGLE_CHECK(file != NULL);
-  Treadmill_descriptor_ = file->message_type(0);
-  static const int Treadmill_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Treadmill, distance_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Treadmill, avgspeed_),
-  };
-  Treadmill_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      Treadmill_descriptor_,
-      Treadmill::default_instance_,
-      Treadmill_offsets_,
-      -1,
-      -1,
-      -1,
-      sizeof(Treadmill),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Treadmill, _internal_metadata_),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Treadmill, _is_default_instance_));
-  RowingMachine_descriptor_ = file->message_type(1);
-  static const int RowingMachine_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RowingMachine, duration_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RowingMachine, repspermin_),
-  };
-  RowingMachine_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
-      RowingMachine_descriptor_,
-      RowingMachine::default_instance_,
-      RowingMachine_offsets_,
-      -1,
-      -1,
-      -1,
-      sizeof(RowingMachine),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RowingMachine, _internal_metadata_),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(RowingMachine, _is_default_instance_));
-  Equipment_descriptor_ = file->message_type(2);
-  static const int Equipment_offsets_[5] = {
+  Equipment_descriptor_ = file->message_type(0);
+  static const int Equipment_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment, name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment, date_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment, id_),
     PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET(Equipment_default_oneof_instance_, treadmill_),
     PROTO2_GENERATED_DEFAULT_ONEOF_FIELD_OFFSET(Equipment_default_oneof_instance_, rowingmachine_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment, EquipmentType_),
@@ -97,7 +68,39 @@ void protobuf_AssignDesc_EquipmentManager_2eproto() {
       sizeof(Equipment),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment, _internal_metadata_),
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment, _is_default_instance_));
-  EquipmentCache_descriptor_ = file->message_type(3);
+  Equipment_Treadmill_descriptor_ = Equipment_descriptor_->nested_type(0);
+  static const int Equipment_Treadmill_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment_Treadmill, distance_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment_Treadmill, avgspeed_),
+  };
+  Equipment_Treadmill_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Equipment_Treadmill_descriptor_,
+      Equipment_Treadmill::default_instance_,
+      Equipment_Treadmill_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(Equipment_Treadmill),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment_Treadmill, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment_Treadmill, _is_default_instance_));
+  Equipment_RowingMachine_descriptor_ = Equipment_descriptor_->nested_type(1);
+  static const int Equipment_RowingMachine_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment_RowingMachine, duration_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment_RowingMachine, repspermin_),
+  };
+  Equipment_RowingMachine_reflection_ =
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+      Equipment_RowingMachine_descriptor_,
+      Equipment_RowingMachine::default_instance_,
+      Equipment_RowingMachine_offsets_,
+      -1,
+      -1,
+      -1,
+      sizeof(Equipment_RowingMachine),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment_RowingMachine, _internal_metadata_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Equipment_RowingMachine, _is_default_instance_));
+  EquipmentCache_descriptor_ = file->message_type(1);
   static const int EquipmentCache_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(EquipmentCache, equipment_),
   };
@@ -125,11 +128,11 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      Treadmill_descriptor_, &Treadmill::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      RowingMachine_descriptor_, &RowingMachine::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       Equipment_descriptor_, &Equipment::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Equipment_Treadmill_descriptor_, &Equipment_Treadmill::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+      Equipment_RowingMachine_descriptor_, &Equipment_RowingMachine::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
       EquipmentCache_descriptor_, &EquipmentCache::default_instance());
 }
@@ -137,13 +140,13 @@ void protobuf_RegisterTypes(const ::std::string&) {
 }  // namespace
 
 void protobuf_ShutdownFile_EquipmentManager_2eproto() {
-  delete Treadmill::default_instance_;
-  delete Treadmill_reflection_;
-  delete RowingMachine::default_instance_;
-  delete RowingMachine_reflection_;
   delete Equipment::default_instance_;
   delete Equipment_default_oneof_instance_;
   delete Equipment_reflection_;
+  delete Equipment_Treadmill::default_instance_;
+  delete Equipment_Treadmill_reflection_;
+  delete Equipment_RowingMachine::default_instance_;
+  delete Equipment_RowingMachine_reflection_;
   delete EquipmentCache::default_instance_;
   delete EquipmentCache_reflection_;
 }
@@ -155,24 +158,26 @@ void protobuf_AddDesc_EquipmentManager_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\026EquipmentManager.proto\"/\n\tTreadmill\022\020\n"
-    "\010distance\030\001 \001(\002\022\020\n\010avgSpeed\030\002 \001(\002\"5\n\rRow"
-    "ingMachine\022\020\n\010duration\030\001 \001(\002\022\022\n\nrepsPerM"
-    "in\030\002 \001(\002\"\202\001\n\tEquipment\022\014\n\004name\030\001 \001(\t\022\014\n\004"
-    "date\030\002 \001(\t\022\037\n\ttreadmill\030\004 \001(\0132\n.Treadmil"
-    "lH\000\022\'\n\rrowingMachine\030\005 \001(\0132\016.RowingMachi"
-    "neH\000B\017\n\rEquipmentType\"/\n\016EquipmentCache\022"
-    "\035\n\tequipment\030\001 \003(\0132\n.Equipmentb\006proto3", 318);
+    "\n\026EquipmentManager.proto\022\005proto\"\226\002\n\tEqui"
+    "pment\022\014\n\004name\030\001 \001(\t\022\014\n\004date\030\002 \001(\t\022\n\n\002id\030"
+    "\003 \001(\005\022/\n\ttreadmill\030\004 \001(\0132\032.proto.Equipme"
+    "nt.TreadmillH\000\0227\n\rrowingMachine\030\005 \001(\0132\036."
+    "proto.Equipment.RowingMachineH\000\032/\n\tTread"
+    "mill\022\020\n\010distance\030\001 \001(\002\022\020\n\010avgSpeed\030\002 \001(\002"
+    "\0325\n\rRowingMachine\022\020\n\010duration\030\001 \001(\002\022\022\n\nr"
+    "epsPerMin\030\002 \001(\002B\017\n\rEquipmentType\"5\n\016Equi"
+    "pmentCache\022#\n\tequipment\030\001 \003(\0132\020.proto.Eq"
+    "uipmentb\006proto3", 375);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "EquipmentManager.proto", &protobuf_RegisterTypes);
-  Treadmill::default_instance_ = new Treadmill();
-  RowingMachine::default_instance_ = new RowingMachine();
   Equipment::default_instance_ = new Equipment();
   Equipment_default_oneof_instance_ = new EquipmentOneofInstance();
+  Equipment_Treadmill::default_instance_ = new Equipment_Treadmill();
+  Equipment_RowingMachine::default_instance_ = new Equipment_RowingMachine();
   EquipmentCache::default_instance_ = new EquipmentCache();
-  Treadmill::default_instance_->InitAsDefaultInstance();
-  RowingMachine::default_instance_->InitAsDefaultInstance();
   Equipment::default_instance_->InitAsDefaultInstance();
+  Equipment_Treadmill::default_instance_->InitAsDefaultInstance();
+  Equipment_RowingMachine::default_instance_->InitAsDefaultInstance();
   EquipmentCache::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_EquipmentManager_2eproto);
 }
@@ -197,73 +202,73 @@ static void MergeFromFail(int line) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int Treadmill::kDistanceFieldNumber;
-const int Treadmill::kAvgSpeedFieldNumber;
+const int Equipment_Treadmill::kDistanceFieldNumber;
+const int Equipment_Treadmill::kAvgSpeedFieldNumber;
 #endif  // !_MSC_VER
 
-Treadmill::Treadmill()
+Equipment_Treadmill::Equipment_Treadmill()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Treadmill)
+  // @@protoc_insertion_point(constructor:proto.Equipment.Treadmill)
 }
 
-void Treadmill::InitAsDefaultInstance() {
+void Equipment_Treadmill::InitAsDefaultInstance() {
   _is_default_instance_ = true;
 }
 
-Treadmill::Treadmill(const Treadmill& from)
+Equipment_Treadmill::Equipment_Treadmill(const Equipment_Treadmill& from)
   : ::google::protobuf::Message(),
     _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:Treadmill)
+  // @@protoc_insertion_point(copy_constructor:proto.Equipment.Treadmill)
 }
 
-void Treadmill::SharedCtor() {
+void Equipment_Treadmill::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
   distance_ = 0;
   avgspeed_ = 0;
 }
 
-Treadmill::~Treadmill() {
-  // @@protoc_insertion_point(destructor:Treadmill)
+Equipment_Treadmill::~Equipment_Treadmill() {
+  // @@protoc_insertion_point(destructor:proto.Equipment.Treadmill)
   SharedDtor();
 }
 
-void Treadmill::SharedDtor() {
+void Equipment_Treadmill::SharedDtor() {
   if (this != default_instance_) {
   }
 }
 
-void Treadmill::SetCachedSize(int size) const {
+void Equipment_Treadmill::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* Treadmill::descriptor() {
+const ::google::protobuf::Descriptor* Equipment_Treadmill::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return Treadmill_descriptor_;
+  return Equipment_Treadmill_descriptor_;
 }
 
-const Treadmill& Treadmill::default_instance() {
+const Equipment_Treadmill& Equipment_Treadmill::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_EquipmentManager_2eproto();
   return *default_instance_;
 }
 
-Treadmill* Treadmill::default_instance_ = NULL;
+Equipment_Treadmill* Equipment_Treadmill::default_instance_ = NULL;
 
-Treadmill* Treadmill::New(::google::protobuf::Arena* arena) const {
-  Treadmill* n = new Treadmill;
+Equipment_Treadmill* Equipment_Treadmill::New(::google::protobuf::Arena* arena) const {
+  Equipment_Treadmill* n = new Equipment_Treadmill;
   if (arena != NULL) {
     arena->Own(n);
   }
   return n;
 }
 
-void Treadmill::Clear() {
+void Equipment_Treadmill::Clear() {
 #define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<Treadmill*>(16)->f)
+  &reinterpret_cast<Equipment_Treadmill*>(16)->f)
 
 #define ZR_(first, last) do {\
   ::memset(&first, 0,\
@@ -277,11 +282,11 @@ void Treadmill::Clear() {
 
 }
 
-bool Treadmill::MergePartialFromCodedStream(
+bool Equipment_Treadmill::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Treadmill)
+  // @@protoc_insertion_point(parse_start:proto.Equipment.Treadmill)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
@@ -329,17 +334,17 @@ bool Treadmill::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:Treadmill)
+  // @@protoc_insertion_point(parse_success:proto.Equipment.Treadmill)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:Treadmill)
+  // @@protoc_insertion_point(parse_failure:proto.Equipment.Treadmill)
   return false;
 #undef DO_
 }
 
-void Treadmill::SerializeWithCachedSizes(
+void Equipment_Treadmill::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Treadmill)
+  // @@protoc_insertion_point(serialize_start:proto.Equipment.Treadmill)
   // optional float distance = 1;
   if (this->distance() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->distance(), output);
@@ -350,12 +355,12 @@ void Treadmill::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->avgspeed(), output);
   }
 
-  // @@protoc_insertion_point(serialize_end:Treadmill)
+  // @@protoc_insertion_point(serialize_end:proto.Equipment.Treadmill)
 }
 
-::google::protobuf::uint8* Treadmill::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Equipment_Treadmill::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Treadmill)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.Equipment.Treadmill)
   // optional float distance = 1;
   if (this->distance() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->distance(), target);
@@ -366,11 +371,11 @@ void Treadmill::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->avgspeed(), target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:Treadmill)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.Equipment.Treadmill)
   return target;
 }
 
-int Treadmill::ByteSize() const {
+int Equipment_Treadmill::ByteSize() const {
   int total_size = 0;
 
   // optional float distance = 1;
@@ -389,10 +394,10 @@ int Treadmill::ByteSize() const {
   return total_size;
 }
 
-void Treadmill::MergeFrom(const ::google::protobuf::Message& from) {
+void Equipment_Treadmill::MergeFrom(const ::google::protobuf::Message& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const Treadmill* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const Treadmill>(
+  const Equipment_Treadmill* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Equipment_Treadmill>(
           &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -401,7 +406,7 @@ void Treadmill::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void Treadmill::MergeFrom(const Treadmill& from) {
+void Equipment_Treadmill::MergeFrom(const Equipment_Treadmill& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from.distance() != 0) {
     set_distance(from.distance());
@@ -411,145 +416,113 @@ void Treadmill::MergeFrom(const Treadmill& from) {
   }
 }
 
-void Treadmill::CopyFrom(const ::google::protobuf::Message& from) {
+void Equipment_Treadmill::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Treadmill::CopyFrom(const Treadmill& from) {
+void Equipment_Treadmill::CopyFrom(const Equipment_Treadmill& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Treadmill::IsInitialized() const {
+bool Equipment_Treadmill::IsInitialized() const {
 
   return true;
 }
 
-void Treadmill::Swap(Treadmill* other) {
+void Equipment_Treadmill::Swap(Equipment_Treadmill* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void Treadmill::InternalSwap(Treadmill* other) {
+void Equipment_Treadmill::InternalSwap(Equipment_Treadmill* other) {
   std::swap(distance_, other->distance_);
   std::swap(avgspeed_, other->avgspeed_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata Treadmill::GetMetadata() const {
+::google::protobuf::Metadata Equipment_Treadmill::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = Treadmill_descriptor_;
-  metadata.reflection = Treadmill_reflection_;
+  metadata.descriptor = Equipment_Treadmill_descriptor_;
+  metadata.reflection = Equipment_Treadmill_reflection_;
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// Treadmill
 
-// optional float distance = 1;
-void Treadmill::clear_distance() {
-  distance_ = 0;
-}
- float Treadmill::distance() const {
-  // @@protoc_insertion_point(field_get:Treadmill.distance)
-  return distance_;
-}
- void Treadmill::set_distance(float value) {
-  
-  distance_ = value;
-  // @@protoc_insertion_point(field_set:Treadmill.distance)
-}
-
-// optional float avgSpeed = 2;
-void Treadmill::clear_avgspeed() {
-  avgspeed_ = 0;
-}
- float Treadmill::avgspeed() const {
-  // @@protoc_insertion_point(field_get:Treadmill.avgSpeed)
-  return avgspeed_;
-}
- void Treadmill::set_avgspeed(float value) {
-  
-  avgspeed_ = value;
-  // @@protoc_insertion_point(field_set:Treadmill.avgSpeed)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
+// -------------------------------------------------------------------
 
 #ifndef _MSC_VER
-const int RowingMachine::kDurationFieldNumber;
-const int RowingMachine::kRepsPerMinFieldNumber;
+const int Equipment_RowingMachine::kDurationFieldNumber;
+const int Equipment_RowingMachine::kRepsPerMinFieldNumber;
 #endif  // !_MSC_VER
 
-RowingMachine::RowingMachine()
+Equipment_RowingMachine::Equipment_RowingMachine()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:RowingMachine)
+  // @@protoc_insertion_point(constructor:proto.Equipment.RowingMachine)
 }
 
-void RowingMachine::InitAsDefaultInstance() {
+void Equipment_RowingMachine::InitAsDefaultInstance() {
   _is_default_instance_ = true;
 }
 
-RowingMachine::RowingMachine(const RowingMachine& from)
+Equipment_RowingMachine::Equipment_RowingMachine(const Equipment_RowingMachine& from)
   : ::google::protobuf::Message(),
     _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:RowingMachine)
+  // @@protoc_insertion_point(copy_constructor:proto.Equipment.RowingMachine)
 }
 
-void RowingMachine::SharedCtor() {
+void Equipment_RowingMachine::SharedCtor() {
     _is_default_instance_ = false;
   _cached_size_ = 0;
   duration_ = 0;
   repspermin_ = 0;
 }
 
-RowingMachine::~RowingMachine() {
-  // @@protoc_insertion_point(destructor:RowingMachine)
+Equipment_RowingMachine::~Equipment_RowingMachine() {
+  // @@protoc_insertion_point(destructor:proto.Equipment.RowingMachine)
   SharedDtor();
 }
 
-void RowingMachine::SharedDtor() {
+void Equipment_RowingMachine::SharedDtor() {
   if (this != default_instance_) {
   }
 }
 
-void RowingMachine::SetCachedSize(int size) const {
+void Equipment_RowingMachine::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* RowingMachine::descriptor() {
+const ::google::protobuf::Descriptor* Equipment_RowingMachine::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return RowingMachine_descriptor_;
+  return Equipment_RowingMachine_descriptor_;
 }
 
-const RowingMachine& RowingMachine::default_instance() {
+const Equipment_RowingMachine& Equipment_RowingMachine::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_EquipmentManager_2eproto();
   return *default_instance_;
 }
 
-RowingMachine* RowingMachine::default_instance_ = NULL;
+Equipment_RowingMachine* Equipment_RowingMachine::default_instance_ = NULL;
 
-RowingMachine* RowingMachine::New(::google::protobuf::Arena* arena) const {
-  RowingMachine* n = new RowingMachine;
+Equipment_RowingMachine* Equipment_RowingMachine::New(::google::protobuf::Arena* arena) const {
+  Equipment_RowingMachine* n = new Equipment_RowingMachine;
   if (arena != NULL) {
     arena->Own(n);
   }
   return n;
 }
 
-void RowingMachine::Clear() {
+void Equipment_RowingMachine::Clear() {
 #define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<RowingMachine*>(16)->f)
+  &reinterpret_cast<Equipment_RowingMachine*>(16)->f)
 
 #define ZR_(first, last) do {\
   ::memset(&first, 0,\
@@ -563,11 +536,11 @@ void RowingMachine::Clear() {
 
 }
 
-bool RowingMachine::MergePartialFromCodedStream(
+bool Equipment_RowingMachine::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:RowingMachine)
+  // @@protoc_insertion_point(parse_start:proto.Equipment.RowingMachine)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
@@ -615,17 +588,17 @@ bool RowingMachine::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:RowingMachine)
+  // @@protoc_insertion_point(parse_success:proto.Equipment.RowingMachine)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:RowingMachine)
+  // @@protoc_insertion_point(parse_failure:proto.Equipment.RowingMachine)
   return false;
 #undef DO_
 }
 
-void RowingMachine::SerializeWithCachedSizes(
+void Equipment_RowingMachine::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:RowingMachine)
+  // @@protoc_insertion_point(serialize_start:proto.Equipment.RowingMachine)
   // optional float duration = 1;
   if (this->duration() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->duration(), output);
@@ -636,12 +609,12 @@ void RowingMachine::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->repspermin(), output);
   }
 
-  // @@protoc_insertion_point(serialize_end:RowingMachine)
+  // @@protoc_insertion_point(serialize_end:proto.Equipment.RowingMachine)
 }
 
-::google::protobuf::uint8* RowingMachine::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Equipment_RowingMachine::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:RowingMachine)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.Equipment.RowingMachine)
   // optional float duration = 1;
   if (this->duration() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->duration(), target);
@@ -652,11 +625,11 @@ void RowingMachine::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->repspermin(), target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:RowingMachine)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.Equipment.RowingMachine)
   return target;
 }
 
-int RowingMachine::ByteSize() const {
+int Equipment_RowingMachine::ByteSize() const {
   int total_size = 0;
 
   // optional float duration = 1;
@@ -675,10 +648,10 @@ int RowingMachine::ByteSize() const {
   return total_size;
 }
 
-void RowingMachine::MergeFrom(const ::google::protobuf::Message& from) {
+void Equipment_RowingMachine::MergeFrom(const ::google::protobuf::Message& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const RowingMachine* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const RowingMachine>(
+  const Equipment_RowingMachine* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const Equipment_RowingMachine>(
           &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -687,7 +660,7 @@ void RowingMachine::MergeFrom(const ::google::protobuf::Message& from) {
   }
 }
 
-void RowingMachine::MergeFrom(const RowingMachine& from) {
+void Equipment_RowingMachine::MergeFrom(const Equipment_RowingMachine& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   if (from.duration() != 0) {
     set_duration(from.duration());
@@ -697,80 +670,49 @@ void RowingMachine::MergeFrom(const RowingMachine& from) {
   }
 }
 
-void RowingMachine::CopyFrom(const ::google::protobuf::Message& from) {
+void Equipment_RowingMachine::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void RowingMachine::CopyFrom(const RowingMachine& from) {
+void Equipment_RowingMachine::CopyFrom(const Equipment_RowingMachine& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool RowingMachine::IsInitialized() const {
+bool Equipment_RowingMachine::IsInitialized() const {
 
   return true;
 }
 
-void RowingMachine::Swap(RowingMachine* other) {
+void Equipment_RowingMachine::Swap(Equipment_RowingMachine* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void RowingMachine::InternalSwap(RowingMachine* other) {
+void Equipment_RowingMachine::InternalSwap(Equipment_RowingMachine* other) {
   std::swap(duration_, other->duration_);
   std::swap(repspermin_, other->repspermin_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
 
-::google::protobuf::Metadata RowingMachine::GetMetadata() const {
+::google::protobuf::Metadata Equipment_RowingMachine::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = RowingMachine_descriptor_;
-  metadata.reflection = RowingMachine_reflection_;
+  metadata.descriptor = Equipment_RowingMachine_descriptor_;
+  metadata.reflection = Equipment_RowingMachine_reflection_;
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// RowingMachine
 
-// optional float duration = 1;
-void RowingMachine::clear_duration() {
-  duration_ = 0;
-}
- float RowingMachine::duration() const {
-  // @@protoc_insertion_point(field_get:RowingMachine.duration)
-  return duration_;
-}
- void RowingMachine::set_duration(float value) {
-  
-  duration_ = value;
-  // @@protoc_insertion_point(field_set:RowingMachine.duration)
-}
-
-// optional float repsPerMin = 2;
-void RowingMachine::clear_repspermin() {
-  repspermin_ = 0;
-}
- float RowingMachine::repspermin() const {
-  // @@protoc_insertion_point(field_get:RowingMachine.repsPerMin)
-  return repspermin_;
-}
- void RowingMachine::set_repspermin(float value) {
-  
-  repspermin_ = value;
-  // @@protoc_insertion_point(field_set:RowingMachine.repsPerMin)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
-
-// ===================================================================
+// -------------------------------------------------------------------
 
 #ifndef _MSC_VER
 const int Equipment::kNameFieldNumber;
 const int Equipment::kDateFieldNumber;
+const int Equipment::kIdFieldNumber;
 const int Equipment::kTreadmillFieldNumber;
 const int Equipment::kRowingMachineFieldNumber;
 #endif  // !_MSC_VER
@@ -778,13 +720,13 @@ const int Equipment::kRowingMachineFieldNumber;
 Equipment::Equipment()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:Equipment)
+  // @@protoc_insertion_point(constructor:proto.Equipment)
 }
 
 void Equipment::InitAsDefaultInstance() {
   _is_default_instance_ = true;
-  Equipment_default_oneof_instance_->treadmill_ = const_cast< ::Treadmill*>(&::Treadmill::default_instance());
-  Equipment_default_oneof_instance_->rowingmachine_ = const_cast< ::RowingMachine*>(&::RowingMachine::default_instance());
+  Equipment_default_oneof_instance_->treadmill_ = const_cast< ::proto::Equipment_Treadmill*>(&::proto::Equipment_Treadmill::default_instance());
+  Equipment_default_oneof_instance_->rowingmachine_ = const_cast< ::proto::Equipment_RowingMachine*>(&::proto::Equipment_RowingMachine::default_instance());
 }
 
 Equipment::Equipment(const Equipment& from)
@@ -792,7 +734,7 @@ Equipment::Equipment(const Equipment& from)
     _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:Equipment)
+  // @@protoc_insertion_point(copy_constructor:proto.Equipment)
 }
 
 void Equipment::SharedCtor() {
@@ -801,11 +743,12 @@ void Equipment::SharedCtor() {
   _cached_size_ = 0;
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   date_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  id_ = 0;
   clear_has_EquipmentType();
 }
 
 Equipment::~Equipment() {
-  // @@protoc_insertion_point(destructor:Equipment)
+  // @@protoc_insertion_point(destructor:proto.Equipment)
   SharedDtor();
 }
 
@@ -865,6 +808,7 @@ void Equipment::clear_EquipmentType() {
 void Equipment::Clear() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   date_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  id_ = 0;
   clear_EquipmentType();
 }
 
@@ -872,7 +816,7 @@ bool Equipment::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Equipment)
+  // @@protoc_insertion_point(parse_start:proto.Equipment)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
@@ -886,7 +830,7 @@ bool Equipment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->name().data(), this->name().length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "Equipment.name"));
+            "proto.Equipment.name"));
         } else {
           goto handle_unusual;
         }
@@ -903,7 +847,22 @@ bool Equipment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->date().data(), this->date().length(),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "Equipment.date"));
+            "proto.Equipment.date"));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_id;
+        break;
+      }
+
+      // optional int32 id = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &id_)));
+
         } else {
           goto handle_unusual;
         }
@@ -911,7 +870,7 @@ bool Equipment::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .Treadmill treadmill = 4;
+      // optional .proto.Equipment.Treadmill treadmill = 4;
       case 4: {
         if (tag == 34) {
          parse_treadmill:
@@ -924,7 +883,7 @@ bool Equipment::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .RowingMachine rowingMachine = 5;
+      // optional .proto.Equipment.RowingMachine rowingMachine = 5;
       case 5: {
         if (tag == 42) {
          parse_rowingMachine:
@@ -950,23 +909,23 @@ bool Equipment::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:Equipment)
+  // @@protoc_insertion_point(parse_success:proto.Equipment)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:Equipment)
+  // @@protoc_insertion_point(parse_failure:proto.Equipment)
   return false;
 #undef DO_
 }
 
 void Equipment::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Equipment)
+  // @@protoc_insertion_point(serialize_start:proto.Equipment)
   // optional string name = 1;
   if (this->name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->name().data(), this->name().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "Equipment.name");
+      "proto.Equipment.name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->name(), output);
   }
@@ -976,35 +935,40 @@ void Equipment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->date().data(), this->date().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "Equipment.date");
+      "proto.Equipment.date");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->date(), output);
   }
 
-  // optional .Treadmill treadmill = 4;
+  // optional int32 id = 3;
+  if (this->id() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->id(), output);
+  }
+
+  // optional .proto.Equipment.Treadmill treadmill = 4;
   if (has_treadmill()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, *EquipmentType_.treadmill_, output);
   }
 
-  // optional .RowingMachine rowingMachine = 5;
+  // optional .proto.Equipment.RowingMachine rowingMachine = 5;
   if (has_rowingmachine()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, *EquipmentType_.rowingmachine_, output);
   }
 
-  // @@protoc_insertion_point(serialize_end:Equipment)
+  // @@protoc_insertion_point(serialize_end:proto.Equipment)
 }
 
 ::google::protobuf::uint8* Equipment::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Equipment)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.Equipment)
   // optional string name = 1;
   if (this->name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->name().data(), this->name().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "Equipment.name");
+      "proto.Equipment.name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->name(), target);
@@ -1015,27 +979,32 @@ void Equipment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->date().data(), this->date().length(),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "Equipment.date");
+      "proto.Equipment.date");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->date(), target);
   }
 
-  // optional .Treadmill treadmill = 4;
+  // optional int32 id = 3;
+  if (this->id() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->id(), target);
+  }
+
+  // optional .proto.Equipment.Treadmill treadmill = 4;
   if (has_treadmill()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         4, *EquipmentType_.treadmill_, target);
   }
 
-  // optional .RowingMachine rowingMachine = 5;
+  // optional .proto.Equipment.RowingMachine rowingMachine = 5;
   if (has_rowingmachine()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         5, *EquipmentType_.rowingmachine_, target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:Equipment)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.Equipment)
   return target;
 }
 
@@ -1056,15 +1025,22 @@ int Equipment::ByteSize() const {
         this->date());
   }
 
+  // optional int32 id = 3;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->id());
+  }
+
   switch (EquipmentType_case()) {
-    // optional .Treadmill treadmill = 4;
+    // optional .proto.Equipment.Treadmill treadmill = 4;
     case kTreadmill: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           *EquipmentType_.treadmill_);
       break;
     }
-    // optional .RowingMachine rowingMachine = 5;
+    // optional .proto.Equipment.RowingMachine rowingMachine = 5;
     case kRowingMachine: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -1097,11 +1073,11 @@ void Equipment::MergeFrom(const Equipment& from) {
   if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
   switch (from.EquipmentType_case()) {
     case kTreadmill: {
-      mutable_treadmill()->::Treadmill::MergeFrom(from.treadmill());
+      mutable_treadmill()->::proto::Equipment_Treadmill::MergeFrom(from.treadmill());
       break;
     }
     case kRowingMachine: {
-      mutable_rowingmachine()->::RowingMachine::MergeFrom(from.rowingmachine());
+      mutable_rowingmachine()->::proto::Equipment_RowingMachine::MergeFrom(from.rowingmachine());
       break;
     }
     case EQUIPMENTTYPE_NOT_SET: {
@@ -1115,6 +1091,9 @@ void Equipment::MergeFrom(const Equipment& from) {
   if (from.date().size() > 0) {
 
     date_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.date_);
+  }
+  if (from.id() != 0) {
+    set_id(from.id());
   }
 }
 
@@ -1142,6 +1121,7 @@ void Equipment::Swap(Equipment* other) {
 void Equipment::InternalSwap(Equipment* other) {
   name_.Swap(&other->name_);
   date_.Swap(&other->date_);
+  std::swap(id_, other->id_);
   std::swap(EquipmentType_, other->EquipmentType_);
   std::swap(_oneof_case_[0], other->_oneof_case_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -1157,6 +1137,70 @@ void Equipment::InternalSwap(Equipment* other) {
 }
 
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
+// Equipment_Treadmill
+
+// optional float distance = 1;
+void Equipment_Treadmill::clear_distance() {
+  distance_ = 0;
+}
+ float Equipment_Treadmill::distance() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.Treadmill.distance)
+  return distance_;
+}
+ void Equipment_Treadmill::set_distance(float value) {
+  
+  distance_ = value;
+  // @@protoc_insertion_point(field_set:proto.Equipment.Treadmill.distance)
+}
+
+// optional float avgSpeed = 2;
+void Equipment_Treadmill::clear_avgspeed() {
+  avgspeed_ = 0;
+}
+ float Equipment_Treadmill::avgspeed() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.Treadmill.avgSpeed)
+  return avgspeed_;
+}
+ void Equipment_Treadmill::set_avgspeed(float value) {
+  
+  avgspeed_ = value;
+  // @@protoc_insertion_point(field_set:proto.Equipment.Treadmill.avgSpeed)
+}
+
+// -------------------------------------------------------------------
+
+// Equipment_RowingMachine
+
+// optional float duration = 1;
+void Equipment_RowingMachine::clear_duration() {
+  duration_ = 0;
+}
+ float Equipment_RowingMachine::duration() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.RowingMachine.duration)
+  return duration_;
+}
+ void Equipment_RowingMachine::set_duration(float value) {
+  
+  duration_ = value;
+  // @@protoc_insertion_point(field_set:proto.Equipment.RowingMachine.duration)
+}
+
+// optional float repsPerMin = 2;
+void Equipment_RowingMachine::clear_repspermin() {
+  repspermin_ = 0;
+}
+ float Equipment_RowingMachine::repspermin() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.RowingMachine.repsPerMin)
+  return repspermin_;
+}
+ void Equipment_RowingMachine::set_repspermin(float value) {
+  
+  repspermin_ = value;
+  // @@protoc_insertion_point(field_set:proto.Equipment.RowingMachine.repsPerMin)
+}
+
+// -------------------------------------------------------------------
+
 // Equipment
 
 // optional string name = 1;
@@ -1164,28 +1208,28 @@ void Equipment::clear_name() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
  const ::std::string& Equipment::name() const {
-  // @@protoc_insertion_point(field_get:Equipment.name)
+  // @@protoc_insertion_point(field_get:proto.Equipment.name)
   return name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
  void Equipment::set_name(const ::std::string& value) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:Equipment.name)
+  // @@protoc_insertion_point(field_set:proto.Equipment.name)
 }
  void Equipment::set_name(const char* value) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:Equipment.name)
+  // @@protoc_insertion_point(field_set_char:proto.Equipment.name)
 }
  void Equipment::set_name(const char* value, size_t size) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:Equipment.name)
+  // @@protoc_insertion_point(field_set_pointer:proto.Equipment.name)
 }
  ::std::string* Equipment::mutable_name() {
   
-  // @@protoc_insertion_point(field_mutable:Equipment.name)
+  // @@protoc_insertion_point(field_mutable:proto.Equipment.name)
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
  ::std::string* Equipment::release_name() {
@@ -1199,7 +1243,7 @@ void Equipment::clear_name() {
     
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:Equipment.name)
+  // @@protoc_insertion_point(field_set_allocated:proto.Equipment.name)
 }
 
 // optional string date = 2;
@@ -1207,28 +1251,28 @@ void Equipment::clear_date() {
   date_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
  const ::std::string& Equipment::date() const {
-  // @@protoc_insertion_point(field_get:Equipment.date)
+  // @@protoc_insertion_point(field_get:proto.Equipment.date)
   return date_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
  void Equipment::set_date(const ::std::string& value) {
   
   date_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:Equipment.date)
+  // @@protoc_insertion_point(field_set:proto.Equipment.date)
 }
  void Equipment::set_date(const char* value) {
   
   date_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:Equipment.date)
+  // @@protoc_insertion_point(field_set_char:proto.Equipment.date)
 }
  void Equipment::set_date(const char* value, size_t size) {
   
   date_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:Equipment.date)
+  // @@protoc_insertion_point(field_set_pointer:proto.Equipment.date)
 }
  ::std::string* Equipment::mutable_date() {
   
-  // @@protoc_insertion_point(field_mutable:Equipment.date)
+  // @@protoc_insertion_point(field_mutable:proto.Equipment.date)
   return date_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
  ::std::string* Equipment::release_date() {
@@ -1242,10 +1286,24 @@ void Equipment::clear_date() {
     
   }
   date_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), date);
-  // @@protoc_insertion_point(field_set_allocated:Equipment.date)
+  // @@protoc_insertion_point(field_set_allocated:proto.Equipment.date)
 }
 
-// optional .Treadmill treadmill = 4;
+// optional int32 id = 3;
+void Equipment::clear_id() {
+  id_ = 0;
+}
+ ::google::protobuf::int32 Equipment::id() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.id)
+  return id_;
+}
+ void Equipment::set_id(::google::protobuf::int32 value) {
+  
+  id_ = value;
+  // @@protoc_insertion_point(field_set:proto.Equipment.id)
+}
+
+// optional .proto.Equipment.Treadmill treadmill = 4;
 bool Equipment::has_treadmill() const {
   return EquipmentType_case() == kTreadmill;
 }
@@ -1258,41 +1316,41 @@ void Equipment::clear_treadmill() {
     clear_has_EquipmentType();
   }
 }
- const ::Treadmill& Equipment::treadmill() const {
-  // @@protoc_insertion_point(field_get:Equipment.treadmill)
+ const ::proto::Equipment_Treadmill& Equipment::treadmill() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.treadmill)
   return has_treadmill()
       ? *EquipmentType_.treadmill_
-      : ::Treadmill::default_instance();
+      : ::proto::Equipment_Treadmill::default_instance();
 }
-::Treadmill* Equipment::mutable_treadmill() {
+::proto::Equipment_Treadmill* Equipment::mutable_treadmill() {
   if (!has_treadmill()) {
     clear_EquipmentType();
     set_has_treadmill();
-    EquipmentType_.treadmill_ = new ::Treadmill;
+    EquipmentType_.treadmill_ = new ::proto::Equipment_Treadmill;
   }
-  // @@protoc_insertion_point(field_mutable:Equipment.treadmill)
+  // @@protoc_insertion_point(field_mutable:proto.Equipment.treadmill)
   return EquipmentType_.treadmill_;
 }
-::Treadmill* Equipment::release_treadmill() {
+::proto::Equipment_Treadmill* Equipment::release_treadmill() {
   if (has_treadmill()) {
     clear_has_EquipmentType();
-    ::Treadmill* temp = EquipmentType_.treadmill_;
+    ::proto::Equipment_Treadmill* temp = EquipmentType_.treadmill_;
     EquipmentType_.treadmill_ = NULL;
     return temp;
   } else {
     return NULL;
   }
 }
-void Equipment::set_allocated_treadmill(::Treadmill* treadmill) {
+void Equipment::set_allocated_treadmill(::proto::Equipment_Treadmill* treadmill) {
   clear_EquipmentType();
   if (treadmill) {
     set_has_treadmill();
     EquipmentType_.treadmill_ = treadmill;
   }
-  // @@protoc_insertion_point(field_set_allocated:Equipment.treadmill)
+  // @@protoc_insertion_point(field_set_allocated:proto.Equipment.treadmill)
 }
 
-// optional .RowingMachine rowingMachine = 5;
+// optional .proto.Equipment.RowingMachine rowingMachine = 5;
 bool Equipment::has_rowingmachine() const {
   return EquipmentType_case() == kRowingMachine;
 }
@@ -1305,38 +1363,38 @@ void Equipment::clear_rowingmachine() {
     clear_has_EquipmentType();
   }
 }
- const ::RowingMachine& Equipment::rowingmachine() const {
-  // @@protoc_insertion_point(field_get:Equipment.rowingMachine)
+ const ::proto::Equipment_RowingMachine& Equipment::rowingmachine() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.rowingMachine)
   return has_rowingmachine()
       ? *EquipmentType_.rowingmachine_
-      : ::RowingMachine::default_instance();
+      : ::proto::Equipment_RowingMachine::default_instance();
 }
-::RowingMachine* Equipment::mutable_rowingmachine() {
+::proto::Equipment_RowingMachine* Equipment::mutable_rowingmachine() {
   if (!has_rowingmachine()) {
     clear_EquipmentType();
     set_has_rowingmachine();
-    EquipmentType_.rowingmachine_ = new ::RowingMachine;
+    EquipmentType_.rowingmachine_ = new ::proto::Equipment_RowingMachine;
   }
-  // @@protoc_insertion_point(field_mutable:Equipment.rowingMachine)
+  // @@protoc_insertion_point(field_mutable:proto.Equipment.rowingMachine)
   return EquipmentType_.rowingmachine_;
 }
-::RowingMachine* Equipment::release_rowingmachine() {
+::proto::Equipment_RowingMachine* Equipment::release_rowingmachine() {
   if (has_rowingmachine()) {
     clear_has_EquipmentType();
-    ::RowingMachine* temp = EquipmentType_.rowingmachine_;
+    ::proto::Equipment_RowingMachine* temp = EquipmentType_.rowingmachine_;
     EquipmentType_.rowingmachine_ = NULL;
     return temp;
   } else {
     return NULL;
   }
 }
-void Equipment::set_allocated_rowingmachine(::RowingMachine* rowingmachine) {
+void Equipment::set_allocated_rowingmachine(::proto::Equipment_RowingMachine* rowingmachine) {
   clear_EquipmentType();
   if (rowingmachine) {
     set_has_rowingmachine();
     EquipmentType_.rowingmachine_ = rowingmachine;
   }
-  // @@protoc_insertion_point(field_set_allocated:Equipment.rowingMachine)
+  // @@protoc_insertion_point(field_set_allocated:proto.Equipment.rowingMachine)
 }
 
 bool Equipment::has_EquipmentType() const {
@@ -1359,7 +1417,7 @@ const int EquipmentCache::kEquipmentFieldNumber;
 EquipmentCache::EquipmentCache()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:EquipmentCache)
+  // @@protoc_insertion_point(constructor:proto.EquipmentCache)
 }
 
 void EquipmentCache::InitAsDefaultInstance() {
@@ -1371,7 +1429,7 @@ EquipmentCache::EquipmentCache(const EquipmentCache& from)
     _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:EquipmentCache)
+  // @@protoc_insertion_point(copy_constructor:proto.EquipmentCache)
 }
 
 void EquipmentCache::SharedCtor() {
@@ -1380,7 +1438,7 @@ void EquipmentCache::SharedCtor() {
 }
 
 EquipmentCache::~EquipmentCache() {
-  // @@protoc_insertion_point(destructor:EquipmentCache)
+  // @@protoc_insertion_point(destructor:proto.EquipmentCache)
   SharedDtor();
 }
 
@@ -1422,13 +1480,13 @@ bool EquipmentCache::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:EquipmentCache)
+  // @@protoc_insertion_point(parse_start:proto.EquipmentCache)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .Equipment equipment = 1;
+      // repeated .proto.Equipment equipment = 1;
       case 1: {
         if (tag == 10) {
           DO_(input->IncrementRecursionDepth());
@@ -1457,44 +1515,44 @@ bool EquipmentCache::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:EquipmentCache)
+  // @@protoc_insertion_point(parse_success:proto.EquipmentCache)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:EquipmentCache)
+  // @@protoc_insertion_point(parse_failure:proto.EquipmentCache)
   return false;
 #undef DO_
 }
 
 void EquipmentCache::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:EquipmentCache)
-  // repeated .Equipment equipment = 1;
+  // @@protoc_insertion_point(serialize_start:proto.EquipmentCache)
+  // repeated .proto.Equipment equipment = 1;
   for (unsigned int i = 0, n = this->equipment_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->equipment(i), output);
   }
 
-  // @@protoc_insertion_point(serialize_end:EquipmentCache)
+  // @@protoc_insertion_point(serialize_end:proto.EquipmentCache)
 }
 
 ::google::protobuf::uint8* EquipmentCache::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:EquipmentCache)
-  // repeated .Equipment equipment = 1;
+  // @@protoc_insertion_point(serialize_to_array_start:proto.EquipmentCache)
+  // repeated .proto.Equipment equipment = 1;
   for (unsigned int i = 0, n = this->equipment_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->equipment(i), target);
   }
 
-  // @@protoc_insertion_point(serialize_to_array_end:EquipmentCache)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.EquipmentCache)
   return target;
 }
 
 int EquipmentCache::ByteSize() const {
   int total_size = 0;
 
-  // repeated .Equipment equipment = 1;
+  // repeated .proto.Equipment equipment = 1;
   total_size += 1 * this->equipment_size();
   for (int i = 0; i < this->equipment_size(); i++) {
     total_size +=
@@ -1563,38 +1621,40 @@ void EquipmentCache::InternalSwap(EquipmentCache* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // EquipmentCache
 
-// repeated .Equipment equipment = 1;
+// repeated .proto.Equipment equipment = 1;
 int EquipmentCache::equipment_size() const {
   return equipment_.size();
 }
 void EquipmentCache::clear_equipment() {
   equipment_.Clear();
 }
-const ::Equipment& EquipmentCache::equipment(int index) const {
-  // @@protoc_insertion_point(field_get:EquipmentCache.equipment)
+const ::proto::Equipment& EquipmentCache::equipment(int index) const {
+  // @@protoc_insertion_point(field_get:proto.EquipmentCache.equipment)
   return equipment_.Get(index);
 }
-::Equipment* EquipmentCache::mutable_equipment(int index) {
-  // @@protoc_insertion_point(field_mutable:EquipmentCache.equipment)
+::proto::Equipment* EquipmentCache::mutable_equipment(int index) {
+  // @@protoc_insertion_point(field_mutable:proto.EquipmentCache.equipment)
   return equipment_.Mutable(index);
 }
-::Equipment* EquipmentCache::add_equipment() {
-  // @@protoc_insertion_point(field_add:EquipmentCache.equipment)
+::proto::Equipment* EquipmentCache::add_equipment() {
+  // @@protoc_insertion_point(field_add:proto.EquipmentCache.equipment)
   return equipment_.Add();
 }
-::google::protobuf::RepeatedPtrField< ::Equipment >*
+::google::protobuf::RepeatedPtrField< ::proto::Equipment >*
 EquipmentCache::mutable_equipment() {
-  // @@protoc_insertion_point(field_mutable_list:EquipmentCache.equipment)
+  // @@protoc_insertion_point(field_mutable_list:proto.EquipmentCache.equipment)
   return &equipment_;
 }
-const ::google::protobuf::RepeatedPtrField< ::Equipment >&
+const ::google::protobuf::RepeatedPtrField< ::proto::Equipment >&
 EquipmentCache::equipment() const {
-  // @@protoc_insertion_point(field_list:EquipmentCache.equipment)
+  // @@protoc_insertion_point(field_list:proto.EquipmentCache.equipment)
   return equipment_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
+
+}  // namespace proto
 
 // @@protoc_insertion_point(global_scope)

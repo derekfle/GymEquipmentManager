@@ -1,15 +1,17 @@
 #include <ctime>
 #include <chrono>
+#include <fstream>
 #include <iomanip> 
 #include <iostream>
 #include <sstream>
+#include <vector>
 
 #include "EquipmentManager.pb.h"
 #include "EquipmentReportManager.h"
 
 EquipmentReportManager::EquipmentReportManager() :
-	treadmill(new class TreadmillReport),
-	rowingMachine(new class RowingMachineReport)
+	treadmill(new TreadmillReport),
+	rowingMachine(new RowingMachineReport)
 {
 	Load();
 }
@@ -117,10 +119,78 @@ void EquipmentReportManager::Print(const unsigned &id)
 
 void EquipmentReportManager::Save()
 {
-	EquipmentCache cache; // TODO
+	GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+	proto::EquipmentCache cache;
+
+	for (const auto &it : equipmentCache)
+	{
+		proto::Equipment *equipment = cache.add_equipment();
+		equipment->set_id(it.first);
+		equipment->set_name(it.second->name);
+		equipment->set_date(it.second->date);
+		if (dynamic_cast<TreadmillReport*>(it.second))
+		{
+			proto::Equipment::Treadmill *treadmill = new proto::Equipment::Treadmill; // protobuf takes ownership
+			treadmill->set_avgspeed(dynamic_cast<TreadmillReport*>(it.second)->avgSpeed);
+			treadmill->set_distance(dynamic_cast<TreadmillReport*>(it.second)->distance);
+			equipment->set_allocated_treadmill(treadmill);
+		}
+		else if (dynamic_cast<RowingMachineReport*>(it.second))
+		{
+			proto::Equipment::RowingMachine *rowingMachine = new proto::Equipment::RowingMachine; // protobuf takes ownership
+			rowingMachine->set_duration(dynamic_cast<RowingMachineReport*>(it.second)->duration);
+			rowingMachine->set_repspermin(dynamic_cast<RowingMachineReport*>(it.second)->repsPerMin);
+			equipment->set_allocated_rowingmachine(rowingMachine);
+		}
+	}
+
+	{
+		// Write the cache back to disk.
+		std::fstream output("cache.dat", std::ios::out | std::ios::trunc | std::ios::binary);
+		if (!cache.SerializeToOstream(&output))
+		{
+			std::cerr << "Failed to write cache to disk." << std::endl;
+			return;
+		}
+	}
 }
 
 void EquipmentReportManager::Load()
 {
-	EquipmentCache cache; // TODO
+	GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+	proto::EquipmentCache cache;
+
+	// Read the existing cache
+	std::fstream input("cache.dat", std::ios::in | std::ios::binary);
+	if (!input)
+	{
+		std::cout << "File not found. Creating a new file." << std::endl;
+	}
+	else if (!cache.ParseFromIstream(&input))
+	{
+		std::cerr << "Failed to parse cache." << std::endl;
+		return;
+	}
+
+	for (unsigned i = 0; i < cache.equipment_size(); i++)
+	{
+		if (cache.equipment(i).has_treadmill())
+		{
+			equipmentCache.insert(std::pair<unsigned, EquipmentReport*>(cache.equipment(i).id(), treadmill->Clone()));
+			TreadmillReport *tread = dynamic_cast<TreadmillReport*>(equipmentCache.at(cache.equipment(i).id()));
+			tread->avgSpeed = cache.equipment(i).treadmill().avgspeed();
+			tread->distance = cache.equipment(i).treadmill().distance();
+		}
+		else if (cache.equipment(i).has_rowingmachine())
+		{
+			equipmentCache.insert(std::pair<unsigned, EquipmentReport*>(cache.equipment(i).id(), rowingMachine->Clone()));
+			RowingMachineReport *rowing = dynamic_cast<RowingMachineReport*>(equipmentCache.at(cache.equipment(i).id()));
+			rowing->duration = cache.equipment(i).rowingmachine().repspermin();
+			rowing->repsPerMin = cache.equipment(i).rowingmachine().duration();
+		}
+		equipmentCache.at((unsigned)cache.equipment(i).id())->date = cache.equipment(i).date();
+		equipmentCache.at((unsigned)cache.equipment(i).id())->name = cache.equipment(i).name();
+	}
 }

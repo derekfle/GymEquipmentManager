@@ -9,6 +9,9 @@
 class RowingMachineReport : public EquipmentReport
 {
 public:
+
+	friend class EquipmentReportManager;
+
 	RowingMachineReport();
 	RowingMachineReport(const RowingMachineReport &that);
 	~RowingMachineReport();

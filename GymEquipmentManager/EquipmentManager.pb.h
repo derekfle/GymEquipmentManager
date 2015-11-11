@@ -29,6 +29,8 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
+namespace proto {
+
 // Internal implementation detail -- do not call these.
 void protobuf_AddDesc_EquipmentManager_2eproto();
 void protobuf_AssignDesc_EquipmentManager_2eproto();
@@ -36,37 +38,37 @@ void protobuf_ShutdownFile_EquipmentManager_2eproto();
 
 class Equipment;
 class EquipmentCache;
-class RowingMachine;
-class Treadmill;
+class Equipment_RowingMachine;
+class Equipment_Treadmill;
 
 // ===================================================================
 
-class Treadmill : public ::google::protobuf::Message {
+class Equipment_Treadmill : public ::google::protobuf::Message {
  public:
-  Treadmill();
-  virtual ~Treadmill();
+  Equipment_Treadmill();
+  virtual ~Equipment_Treadmill();
 
-  Treadmill(const Treadmill& from);
+  Equipment_Treadmill(const Equipment_Treadmill& from);
 
-  inline Treadmill& operator=(const Treadmill& from) {
+  inline Equipment_Treadmill& operator=(const Equipment_Treadmill& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Treadmill& default_instance();
+  static const Equipment_Treadmill& default_instance();
 
-  void Swap(Treadmill* other);
+  void Swap(Equipment_Treadmill* other);
 
   // implements Message ----------------------------------------------
 
-  inline Treadmill* New() const { return New(NULL); }
+  inline Equipment_Treadmill* New() const { return New(NULL); }
 
-  Treadmill* New(::google::protobuf::Arena* arena) const;
+  Equipment_Treadmill* New(::google::protobuf::Arena* arena) const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const Treadmill& from);
-  void MergeFrom(const Treadmill& from);
+  void CopyFrom(const Equipment_Treadmill& from);
+  void MergeFrom(const Equipment_Treadmill& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -81,7 +83,7 @@ class Treadmill : public ::google::protobuf::Message {
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(Treadmill* other);
+  void InternalSwap(Equipment_Treadmill* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return _internal_metadata_.arena();
@@ -109,7 +111,7 @@ class Treadmill : public ::google::protobuf::Message {
   float avgspeed() const;
   void set_avgspeed(float value);
 
-  // @@protoc_insertion_point(class_scope:Treadmill)
+  // @@protoc_insertion_point(class_scope:proto.Equipment.Treadmill)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -122,36 +124,36 @@ class Treadmill : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_EquipmentManager_2eproto();
 
   void InitAsDefaultInstance();
-  static Treadmill* default_instance_;
+  static Equipment_Treadmill* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class RowingMachine : public ::google::protobuf::Message {
+class Equipment_RowingMachine : public ::google::protobuf::Message {
  public:
-  RowingMachine();
-  virtual ~RowingMachine();
+  Equipment_RowingMachine();
+  virtual ~Equipment_RowingMachine();
 
-  RowingMachine(const RowingMachine& from);
+  Equipment_RowingMachine(const Equipment_RowingMachine& from);
 
-  inline RowingMachine& operator=(const RowingMachine& from) {
+  inline Equipment_RowingMachine& operator=(const Equipment_RowingMachine& from) {
     CopyFrom(from);
     return *this;
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const RowingMachine& default_instance();
+  static const Equipment_RowingMachine& default_instance();
 
-  void Swap(RowingMachine* other);
+  void Swap(Equipment_RowingMachine* other);
 
   // implements Message ----------------------------------------------
 
-  inline RowingMachine* New() const { return New(NULL); }
+  inline Equipment_RowingMachine* New() const { return New(NULL); }
 
-  RowingMachine* New(::google::protobuf::Arena* arena) const;
+  Equipment_RowingMachine* New(::google::protobuf::Arena* arena) const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const RowingMachine& from);
-  void MergeFrom(const RowingMachine& from);
+  void CopyFrom(const Equipment_RowingMachine& from);
+  void MergeFrom(const Equipment_RowingMachine& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -166,7 +168,7 @@ class RowingMachine : public ::google::protobuf::Message {
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(RowingMachine* other);
+  void InternalSwap(Equipment_RowingMachine* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return _internal_metadata_.arena();
@@ -194,7 +196,7 @@ class RowingMachine : public ::google::protobuf::Message {
   float repspermin() const;
   void set_repspermin(float value);
 
-  // @@protoc_insertion_point(class_scope:RowingMachine)
+  // @@protoc_insertion_point(class_scope:proto.Equipment.RowingMachine)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -207,7 +209,7 @@ class RowingMachine : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_EquipmentManager_2eproto();
 
   void InitAsDefaultInstance();
-  static RowingMachine* default_instance_;
+  static Equipment_RowingMachine* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -271,6 +273,9 @@ class Equipment : public ::google::protobuf::Message {
 
   // nested types ----------------------------------------------------
 
+  typedef Equipment_Treadmill Treadmill;
+  typedef Equipment_RowingMachine RowingMachine;
+
   // accessors -------------------------------------------------------
 
   // optional string name = 1;
@@ -295,26 +300,32 @@ class Equipment : public ::google::protobuf::Message {
   ::std::string* release_date();
   void set_allocated_date(::std::string* date);
 
-  // optional .Treadmill treadmill = 4;
+  // optional int32 id = 3;
+  void clear_id();
+  static const int kIdFieldNumber = 3;
+  ::google::protobuf::int32 id() const;
+  void set_id(::google::protobuf::int32 value);
+
+  // optional .proto.Equipment.Treadmill treadmill = 4;
   bool has_treadmill() const;
   void clear_treadmill();
   static const int kTreadmillFieldNumber = 4;
-  const ::Treadmill& treadmill() const;
-  ::Treadmill* mutable_treadmill();
-  ::Treadmill* release_treadmill();
-  void set_allocated_treadmill(::Treadmill* treadmill);
+  const ::proto::Equipment_Treadmill& treadmill() const;
+  ::proto::Equipment_Treadmill* mutable_treadmill();
+  ::proto::Equipment_Treadmill* release_treadmill();
+  void set_allocated_treadmill(::proto::Equipment_Treadmill* treadmill);
 
-  // optional .RowingMachine rowingMachine = 5;
+  // optional .proto.Equipment.RowingMachine rowingMachine = 5;
   bool has_rowingmachine() const;
   void clear_rowingmachine();
   static const int kRowingMachineFieldNumber = 5;
-  const ::RowingMachine& rowingmachine() const;
-  ::RowingMachine* mutable_rowingmachine();
-  ::RowingMachine* release_rowingmachine();
-  void set_allocated_rowingmachine(::RowingMachine* rowingmachine);
+  const ::proto::Equipment_RowingMachine& rowingmachine() const;
+  ::proto::Equipment_RowingMachine* mutable_rowingmachine();
+  ::proto::Equipment_RowingMachine* release_rowingmachine();
+  void set_allocated_rowingmachine(::proto::Equipment_RowingMachine* rowingmachine);
 
   EquipmentTypeCase EquipmentType_case() const;
-  // @@protoc_insertion_point(class_scope:Equipment)
+  // @@protoc_insertion_point(class_scope:proto.Equipment)
  private:
   inline void set_has_treadmill();
   inline void set_has_rowingmachine();
@@ -327,10 +338,11 @@ class Equipment : public ::google::protobuf::Message {
   bool _is_default_instance_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr date_;
+  ::google::protobuf::int32 id_;
   union EquipmentTypeUnion {
     EquipmentTypeUnion() {}
-    ::Treadmill* treadmill_;
-    ::RowingMachine* rowingmachine_;
+    ::proto::Equipment_Treadmill* treadmill_;
+    ::proto::Equipment_RowingMachine* rowingmachine_;
   } EquipmentType_;
   mutable int _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -400,24 +412,24 @@ class EquipmentCache : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .Equipment equipment = 1;
+  // repeated .proto.Equipment equipment = 1;
   int equipment_size() const;
   void clear_equipment();
   static const int kEquipmentFieldNumber = 1;
-  const ::Equipment& equipment(int index) const;
-  ::Equipment* mutable_equipment(int index);
-  ::Equipment* add_equipment();
-  ::google::protobuf::RepeatedPtrField< ::Equipment >*
+  const ::proto::Equipment& equipment(int index) const;
+  ::proto::Equipment* mutable_equipment(int index);
+  ::proto::Equipment* add_equipment();
+  ::google::protobuf::RepeatedPtrField< ::proto::Equipment >*
       mutable_equipment();
-  const ::google::protobuf::RepeatedPtrField< ::Equipment >&
+  const ::google::protobuf::RepeatedPtrField< ::proto::Equipment >&
       equipment() const;
 
-  // @@protoc_insertion_point(class_scope:EquipmentCache)
+  // @@protoc_insertion_point(class_scope:proto.EquipmentCache)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   bool _is_default_instance_;
-  ::google::protobuf::RepeatedPtrField< ::Equipment > equipment_;
+  ::google::protobuf::RepeatedPtrField< ::proto::Equipment > equipment_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_EquipmentManager_2eproto();
   friend void protobuf_AssignDesc_EquipmentManager_2eproto();
@@ -432,66 +444,66 @@ class EquipmentCache : public ::google::protobuf::Message {
 // ===================================================================
 
 #if !PROTOBUF_INLINE_NOT_IN_HEADERS
-// Treadmill
+// Equipment_Treadmill
 
 // optional float distance = 1;
-inline void Treadmill::clear_distance() {
+inline void Equipment_Treadmill::clear_distance() {
   distance_ = 0;
 }
-inline float Treadmill::distance() const {
-  // @@protoc_insertion_point(field_get:Treadmill.distance)
+inline float Equipment_Treadmill::distance() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.Treadmill.distance)
   return distance_;
 }
-inline void Treadmill::set_distance(float value) {
+inline void Equipment_Treadmill::set_distance(float value) {
   
   distance_ = value;
-  // @@protoc_insertion_point(field_set:Treadmill.distance)
+  // @@protoc_insertion_point(field_set:proto.Equipment.Treadmill.distance)
 }
 
 // optional float avgSpeed = 2;
-inline void Treadmill::clear_avgspeed() {
+inline void Equipment_Treadmill::clear_avgspeed() {
   avgspeed_ = 0;
 }
-inline float Treadmill::avgspeed() const {
-  // @@protoc_insertion_point(field_get:Treadmill.avgSpeed)
+inline float Equipment_Treadmill::avgspeed() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.Treadmill.avgSpeed)
   return avgspeed_;
 }
-inline void Treadmill::set_avgspeed(float value) {
+inline void Equipment_Treadmill::set_avgspeed(float value) {
   
   avgspeed_ = value;
-  // @@protoc_insertion_point(field_set:Treadmill.avgSpeed)
+  // @@protoc_insertion_point(field_set:proto.Equipment.Treadmill.avgSpeed)
 }
 
 // -------------------------------------------------------------------
 
-// RowingMachine
+// Equipment_RowingMachine
 
 // optional float duration = 1;
-inline void RowingMachine::clear_duration() {
+inline void Equipment_RowingMachine::clear_duration() {
   duration_ = 0;
 }
-inline float RowingMachine::duration() const {
-  // @@protoc_insertion_point(field_get:RowingMachine.duration)
+inline float Equipment_RowingMachine::duration() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.RowingMachine.duration)
   return duration_;
 }
-inline void RowingMachine::set_duration(float value) {
+inline void Equipment_RowingMachine::set_duration(float value) {
   
   duration_ = value;
-  // @@protoc_insertion_point(field_set:RowingMachine.duration)
+  // @@protoc_insertion_point(field_set:proto.Equipment.RowingMachine.duration)
 }
 
 // optional float repsPerMin = 2;
-inline void RowingMachine::clear_repspermin() {
+inline void Equipment_RowingMachine::clear_repspermin() {
   repspermin_ = 0;
 }
-inline float RowingMachine::repspermin() const {
-  // @@protoc_insertion_point(field_get:RowingMachine.repsPerMin)
+inline float Equipment_RowingMachine::repspermin() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.RowingMachine.repsPerMin)
   return repspermin_;
 }
-inline void RowingMachine::set_repspermin(float value) {
+inline void Equipment_RowingMachine::set_repspermin(float value) {
   
   repspermin_ = value;
-  // @@protoc_insertion_point(field_set:RowingMachine.repsPerMin)
+  // @@protoc_insertion_point(field_set:proto.Equipment.RowingMachine.repsPerMin)
 }
 
 // -------------------------------------------------------------------
@@ -503,28 +515,28 @@ inline void Equipment::clear_name() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline const ::std::string& Equipment::name() const {
-  // @@protoc_insertion_point(field_get:Equipment.name)
+  // @@protoc_insertion_point(field_get:proto.Equipment.name)
   return name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Equipment::set_name(const ::std::string& value) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:Equipment.name)
+  // @@protoc_insertion_point(field_set:proto.Equipment.name)
 }
 inline void Equipment::set_name(const char* value) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:Equipment.name)
+  // @@protoc_insertion_point(field_set_char:proto.Equipment.name)
 }
 inline void Equipment::set_name(const char* value, size_t size) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:Equipment.name)
+  // @@protoc_insertion_point(field_set_pointer:proto.Equipment.name)
 }
 inline ::std::string* Equipment::mutable_name() {
   
-  // @@protoc_insertion_point(field_mutable:Equipment.name)
+  // @@protoc_insertion_point(field_mutable:proto.Equipment.name)
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Equipment::release_name() {
@@ -538,7 +550,7 @@ inline void Equipment::set_allocated_name(::std::string* name) {
     
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:Equipment.name)
+  // @@protoc_insertion_point(field_set_allocated:proto.Equipment.name)
 }
 
 // optional string date = 2;
@@ -546,28 +558,28 @@ inline void Equipment::clear_date() {
   date_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline const ::std::string& Equipment::date() const {
-  // @@protoc_insertion_point(field_get:Equipment.date)
+  // @@protoc_insertion_point(field_get:proto.Equipment.date)
   return date_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline void Equipment::set_date(const ::std::string& value) {
   
   date_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:Equipment.date)
+  // @@protoc_insertion_point(field_set:proto.Equipment.date)
 }
 inline void Equipment::set_date(const char* value) {
   
   date_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:Equipment.date)
+  // @@protoc_insertion_point(field_set_char:proto.Equipment.date)
 }
 inline void Equipment::set_date(const char* value, size_t size) {
   
   date_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:Equipment.date)
+  // @@protoc_insertion_point(field_set_pointer:proto.Equipment.date)
 }
 inline ::std::string* Equipment::mutable_date() {
   
-  // @@protoc_insertion_point(field_mutable:Equipment.date)
+  // @@protoc_insertion_point(field_mutable:proto.Equipment.date)
   return date_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Equipment::release_date() {
@@ -581,10 +593,24 @@ inline void Equipment::set_allocated_date(::std::string* date) {
     
   }
   date_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), date);
-  // @@protoc_insertion_point(field_set_allocated:Equipment.date)
+  // @@protoc_insertion_point(field_set_allocated:proto.Equipment.date)
 }
 
-// optional .Treadmill treadmill = 4;
+// optional int32 id = 3;
+inline void Equipment::clear_id() {
+  id_ = 0;
+}
+inline ::google::protobuf::int32 Equipment::id() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.id)
+  return id_;
+}
+inline void Equipment::set_id(::google::protobuf::int32 value) {
+  
+  id_ = value;
+  // @@protoc_insertion_point(field_set:proto.Equipment.id)
+}
+
+// optional .proto.Equipment.Treadmill treadmill = 4;
 inline bool Equipment::has_treadmill() const {
   return EquipmentType_case() == kTreadmill;
 }
@@ -597,41 +623,41 @@ inline void Equipment::clear_treadmill() {
     clear_has_EquipmentType();
   }
 }
-inline  const ::Treadmill& Equipment::treadmill() const {
-  // @@protoc_insertion_point(field_get:Equipment.treadmill)
+inline  const ::proto::Equipment_Treadmill& Equipment::treadmill() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.treadmill)
   return has_treadmill()
       ? *EquipmentType_.treadmill_
-      : ::Treadmill::default_instance();
+      : ::proto::Equipment_Treadmill::default_instance();
 }
-inline ::Treadmill* Equipment::mutable_treadmill() {
+inline ::proto::Equipment_Treadmill* Equipment::mutable_treadmill() {
   if (!has_treadmill()) {
     clear_EquipmentType();
     set_has_treadmill();
-    EquipmentType_.treadmill_ = new ::Treadmill;
+    EquipmentType_.treadmill_ = new ::proto::Equipment_Treadmill;
   }
-  // @@protoc_insertion_point(field_mutable:Equipment.treadmill)
+  // @@protoc_insertion_point(field_mutable:proto.Equipment.treadmill)
   return EquipmentType_.treadmill_;
 }
-inline ::Treadmill* Equipment::release_treadmill() {
+inline ::proto::Equipment_Treadmill* Equipment::release_treadmill() {
   if (has_treadmill()) {
     clear_has_EquipmentType();
-    ::Treadmill* temp = EquipmentType_.treadmill_;
+    ::proto::Equipment_Treadmill* temp = EquipmentType_.treadmill_;
     EquipmentType_.treadmill_ = NULL;
     return temp;
   } else {
     return NULL;
   }
 }
-inline void Equipment::set_allocated_treadmill(::Treadmill* treadmill) {
+inline void Equipment::set_allocated_treadmill(::proto::Equipment_Treadmill* treadmill) {
   clear_EquipmentType();
   if (treadmill) {
     set_has_treadmill();
     EquipmentType_.treadmill_ = treadmill;
   }
-  // @@protoc_insertion_point(field_set_allocated:Equipment.treadmill)
+  // @@protoc_insertion_point(field_set_allocated:proto.Equipment.treadmill)
 }
 
-// optional .RowingMachine rowingMachine = 5;
+// optional .proto.Equipment.RowingMachine rowingMachine = 5;
 inline bool Equipment::has_rowingmachine() const {
   return EquipmentType_case() == kRowingMachine;
 }
@@ -644,38 +670,38 @@ inline void Equipment::clear_rowingmachine() {
     clear_has_EquipmentType();
   }
 }
-inline  const ::RowingMachine& Equipment::rowingmachine() const {
-  // @@protoc_insertion_point(field_get:Equipment.rowingMachine)
+inline  const ::proto::Equipment_RowingMachine& Equipment::rowingmachine() const {
+  // @@protoc_insertion_point(field_get:proto.Equipment.rowingMachine)
   return has_rowingmachine()
       ? *EquipmentType_.rowingmachine_
-      : ::RowingMachine::default_instance();
+      : ::proto::Equipment_RowingMachine::default_instance();
 }
-inline ::RowingMachine* Equipment::mutable_rowingmachine() {
+inline ::proto::Equipment_RowingMachine* Equipment::mutable_rowingmachine() {
   if (!has_rowingmachine()) {
     clear_EquipmentType();
     set_has_rowingmachine();
-    EquipmentType_.rowingmachine_ = new ::RowingMachine;
+    EquipmentType_.rowingmachine_ = new ::proto::Equipment_RowingMachine;
   }
-  // @@protoc_insertion_point(field_mutable:Equipment.rowingMachine)
+  // @@protoc_insertion_point(field_mutable:proto.Equipment.rowingMachine)
   return EquipmentType_.rowingmachine_;
 }
-inline ::RowingMachine* Equipment::release_rowingmachine() {
+inline ::proto::Equipment_RowingMachine* Equipment::release_rowingmachine() {
   if (has_rowingmachine()) {
     clear_has_EquipmentType();
-    ::RowingMachine* temp = EquipmentType_.rowingmachine_;
+    ::proto::Equipment_RowingMachine* temp = EquipmentType_.rowingmachine_;
     EquipmentType_.rowingmachine_ = NULL;
     return temp;
   } else {
     return NULL;
   }
 }
-inline void Equipment::set_allocated_rowingmachine(::RowingMachine* rowingmachine) {
+inline void Equipment::set_allocated_rowingmachine(::proto::Equipment_RowingMachine* rowingmachine) {
   clear_EquipmentType();
   if (rowingmachine) {
     set_has_rowingmachine();
     EquipmentType_.rowingmachine_ = rowingmachine;
   }
-  // @@protoc_insertion_point(field_set_allocated:Equipment.rowingMachine)
+  // @@protoc_insertion_point(field_set_allocated:proto.Equipment.rowingMachine)
 }
 
 inline bool Equipment::has_EquipmentType() const {
@@ -691,33 +717,33 @@ inline Equipment::EquipmentTypeCase Equipment::EquipmentType_case() const {
 
 // EquipmentCache
 
-// repeated .Equipment equipment = 1;
+// repeated .proto.Equipment equipment = 1;
 inline int EquipmentCache::equipment_size() const {
   return equipment_.size();
 }
 inline void EquipmentCache::clear_equipment() {
   equipment_.Clear();
 }
-inline const ::Equipment& EquipmentCache::equipment(int index) const {
-  // @@protoc_insertion_point(field_get:EquipmentCache.equipment)
+inline const ::proto::Equipment& EquipmentCache::equipment(int index) const {
+  // @@protoc_insertion_point(field_get:proto.EquipmentCache.equipment)
   return equipment_.Get(index);
 }
-inline ::Equipment* EquipmentCache::mutable_equipment(int index) {
-  // @@protoc_insertion_point(field_mutable:EquipmentCache.equipment)
+inline ::proto::Equipment* EquipmentCache::mutable_equipment(int index) {
+  // @@protoc_insertion_point(field_mutable:proto.EquipmentCache.equipment)
   return equipment_.Mutable(index);
 }
-inline ::Equipment* EquipmentCache::add_equipment() {
-  // @@protoc_insertion_point(field_add:EquipmentCache.equipment)
+inline ::proto::Equipment* EquipmentCache::add_equipment() {
+  // @@protoc_insertion_point(field_add:proto.EquipmentCache.equipment)
   return equipment_.Add();
 }
-inline ::google::protobuf::RepeatedPtrField< ::Equipment >*
+inline ::google::protobuf::RepeatedPtrField< ::proto::Equipment >*
 EquipmentCache::mutable_equipment() {
-  // @@protoc_insertion_point(field_mutable_list:EquipmentCache.equipment)
+  // @@protoc_insertion_point(field_mutable_list:proto.EquipmentCache.equipment)
   return &equipment_;
 }
-inline const ::google::protobuf::RepeatedPtrField< ::Equipment >&
+inline const ::google::protobuf::RepeatedPtrField< ::proto::Equipment >&
 EquipmentCache::equipment() const {
-  // @@protoc_insertion_point(field_list:EquipmentCache.equipment)
+  // @@protoc_insertion_point(field_list:proto.EquipmentCache.equipment)
   return equipment_;
 }
 
@@ -730,6 +756,8 @@ EquipmentCache::equipment() const {
 
 
 // @@protoc_insertion_point(namespace_scope)
+
+}  // namespace proto
 
 // @@protoc_insertion_point(global_scope)
 
