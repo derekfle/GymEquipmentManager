@@ -1,6 +1,5 @@
 /**
-* EquipmentManager handles the storing and retrieving of equipment within the system. 
-* It also handles the user interface and most logic for running the system.
+* EquipmentManager handles the storing, retrieving, and removing of equipment within the system. 
 */
 
 #pragma once
@@ -24,20 +23,18 @@ public:
 		RowingMachine
 	};
 
-	/**
-	* Lists all equipment in the system
-	*/
+	//! Lists all equipment in the system
 	void List();
 
 	//! Remove equipment from the system and persist new data immediately
 	/*!
-	\param id The id of the equipment to be removed
+	* \param id The id of the equipment to be removed
 	*/
 	void Remove(const unsigned &id);
 
 	//! Add equipment to the system and persist new data immediately
 	/*!
-	\param type The type of the equipment to be added
+	* \param type The type of the equipment to be added
 	*/
 	void Add(const EquipmentType &type);
 
