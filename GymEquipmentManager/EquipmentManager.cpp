@@ -18,12 +18,22 @@ EquipmentManager::~EquipmentManager()
 	if (rowingMachine) delete rowingMachine;
 }
 
-void EquipmentManager::List()
+void EquipmentManager::List() const
 {
+	std::cout << "/**************************************************/\n";
 	for (const auto &it : equipmentCache)
 	{
-		std::cout << "Equipment " << it.first << std::endl;
+		if (dynamic_cast<class Treadmill*>(it.second))
+		{
+			std::cout << "Treadmill: ";
+		}
+		else
+		{
+			std::cout << "Rowing Machine: ";
+		}
+		std::cout << "[id: " << it.first << ", name: " << it.second->name << "]" << std::endl;
 	}
+	std::cout << "/**************************************************/\n";
 }
 
 void EquipmentManager::Remove(const unsigned &id)
@@ -38,7 +48,7 @@ void EquipmentManager::Remove(const unsigned &id)
 	}
 }
 
-void EquipmentManager::Add(const EquipmentType &type)
+void EquipmentManager::Add(const EquipmentType &type, const std::string &name)
 {
 	// Find a unique id by searching the equipment cache
 	auto GenerateId = [this]()
@@ -52,15 +62,21 @@ void EquipmentManager::Add(const EquipmentType &type)
 		return id;
 	};
 
+	unsigned id;
 	switch (type)
 	{
 	case EquipmentType::Treadmill:
-		equipmentCache.insert(std::pair<unsigned, Equipment*>(GenerateId(), treadmill->Clone()));
+		id = GenerateId();
+		equipmentCache.insert(std::pair<unsigned, Equipment*>(id, treadmill->Clone()));
 		break;
 	case EquipmentType::RowingMachine:
-		equipmentCache.insert(std::pair<unsigned, Equipment*>(GenerateId(), rowingMachine->Clone()));
+		id = GenerateId();
+		equipmentCache.insert(std::pair<unsigned, Equipment*>(id, rowingMachine->Clone()));
 		break;
 	default:
 		std::cout << "Invalid type.\n";
+		return;
 	}
+
+	equipmentCache.at(id)->name = name;
 }

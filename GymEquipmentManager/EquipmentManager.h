@@ -24,7 +24,7 @@ public:
 	};
 
 	//! Lists all equipment in the system
-	void List();
+	void List() const;
 
 	//! Remove equipment from the system and persist new data immediately
 	/*!
@@ -36,7 +36,7 @@ public:
 	/*!
 	* \param type The type of the equipment to be added
 	*/
-	void Add(const EquipmentType &type);
+	void Add(const EquipmentType &type, const std::string &name);
 
 private:
 
