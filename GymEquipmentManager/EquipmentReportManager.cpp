@@ -1,13 +1,13 @@
 #include <iostream>
 
-#include "EquipmentManager.h"
+#include "EquipmentReportManager.h"
 
-EquipmentManager::EquipmentManager() :
-	treadmill(new class Treadmill),
-	rowingMachine(new class RowingMachine)
+EquipmentReportManager::EquipmentReportManager() :
+	treadmill(new class TreadmillReport),
+	rowingMachine(new class RowingMachineReport)
 {}
 
-EquipmentManager::~EquipmentManager()
+EquipmentReportManager::~EquipmentReportManager()
 {
 	for (auto &it : equipmentCache)
 	{
@@ -18,12 +18,12 @@ EquipmentManager::~EquipmentManager()
 	if (rowingMachine) delete rowingMachine;
 }
 
-void EquipmentManager::List() const
+void EquipmentReportManager::List() const
 {
 	std::cout << "/**************************************************/\n";
 	for (const auto &it : equipmentCache)
 	{
-		if (dynamic_cast<class Treadmill*>(it.second))
+		if (dynamic_cast<class TreadmillReport*>(it.second))
 		{
 			std::cout << "Treadmill: ";
 		}
@@ -36,11 +36,11 @@ void EquipmentManager::List() const
 	std::cout << "/**************************************************/\n";
 }
 
-void EquipmentManager::Remove(const unsigned &id)
+void EquipmentReportManager::Remove(const unsigned &id)
 {
 	if (equipmentCache.find(id) == equipmentCache.end())
 	{
-		std::cout << "Equipment with id: " << id << " not found!\n";
+		std::cout << "Equipment report with id: " << id << " not found!\n";
 	}
 	else
 	{
@@ -48,7 +48,7 @@ void EquipmentManager::Remove(const unsigned &id)
 	}
 }
 
-void EquipmentManager::Add(const EquipmentType &type, const std::string &name)
+void EquipmentReportManager::Add(const ReportType &type, const std::string &name)
 {
 	// Find a unique id by searching the equipment cache
 	auto GenerateId = [this]()
@@ -65,13 +65,13 @@ void EquipmentManager::Add(const EquipmentType &type, const std::string &name)
 	unsigned id;
 	switch (type)
 	{
-	case EquipmentType::Treadmill:
+	case ReportType::Treadmill:
 		id = GenerateId();
-		equipmentCache.insert(std::pair<unsigned, Equipment*>(id, treadmill->Clone()));
+		equipmentCache.insert(std::pair<unsigned, EquipmentReport*>(id, treadmill->Clone()));
 		break;
-	case EquipmentType::RowingMachine:
+	case ReportType::RowingMachine:
 		id = GenerateId();
-		equipmentCache.insert(std::pair<unsigned, Equipment*>(id, rowingMachine->Clone()));
+		equipmentCache.insert(std::pair<unsigned, EquipmentReport*>(id, rowingMachine->Clone()));
 		break;
 	default:
 		std::cout << "Invalid type.\n";
@@ -79,4 +79,16 @@ void EquipmentManager::Add(const EquipmentType &type, const std::string &name)
 	}
 
 	equipmentCache.at(id)->name = name;
+}
+
+void EquipmentReportManager::Print(const unsigned &id)
+{
+	if (equipmentCache.find(id) == equipmentCache.end())
+	{
+		std::cout << "Equipment report with id: " << id << " not found!\n";
+	}
+	else
+	{
+		equipmentCache.at(id)->Print();
+	}
 }

@@ -1,3 +1,7 @@
+/**
+* Test cases for the equipment report management system
+*/
+
 #include "gtest/gtest.h"
 
 int main(int argc, char **argv)
