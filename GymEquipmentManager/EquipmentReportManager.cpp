@@ -59,7 +59,7 @@ void EquipmentReportManager::Remove(const unsigned &id)
 	Save();
 }
 
-void EquipmentReportManager::Add(const ReportType &type, const std::string &name)
+void EquipmentReportManager::Add(const ReportType &type, const std::string &name, const std::map<std::string, unsigned> &data)
 {
 	// Find a unique id by searching the equipment cache
 	auto GenerateId = [this]()
@@ -79,10 +79,14 @@ void EquipmentReportManager::Add(const ReportType &type, const std::string &name
 	case ReportType::Treadmill:
 		id = GenerateId();
 		equipmentCache.insert(std::pair<unsigned, EquipmentReport*>(id, treadmill->Clone()));
+		dynamic_cast<TreadmillReport*>(equipmentCache.at(id))->distance = data.at("Distance");
+		dynamic_cast<TreadmillReport*>(equipmentCache.at(id))->avgSpeed = data.at("AvgSpeed");
 		break;
 	case ReportType::RowingMachine:
 		id = GenerateId();
 		equipmentCache.insert(std::pair<unsigned, EquipmentReport*>(id, rowingMachine->Clone()));
+		dynamic_cast<RowingMachineReport*>(equipmentCache.at(id))->duration = data.at("Duration");
+		dynamic_cast<RowingMachineReport*>(equipmentCache.at(id))->repsPerMin = data.at("RepsPerMin");
 		break;
 	default:
 		std::cout << "Invalid type.\n";

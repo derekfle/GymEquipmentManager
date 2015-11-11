@@ -13,6 +13,10 @@ public:
 	friend class EquipmentReportManager;
 
 	TreadmillReport();
+	//! Copy constructor
+	/*!
+	* \param that The object to be copied from
+	*/
 	TreadmillReport(const TreadmillReport &that);
 	~TreadmillReport();
 

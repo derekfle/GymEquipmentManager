@@ -13,6 +13,10 @@ public:
 	friend class EquipmentReportManager;
 
 	EquipmentReport();
+	//! Copy constructor
+	/*!
+	* \param that The object to be copied from
+	*/
 	EquipmentReport(const EquipmentReport &that);
 	virtual ~EquipmentReport();
 

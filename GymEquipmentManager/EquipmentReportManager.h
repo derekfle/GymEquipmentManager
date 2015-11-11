@@ -35,8 +35,10 @@ public:
 	//! Add equipment report to the system and persist new data immediately
 	/*!
 	* \param type The type of the equipment report to be added
+	* \param name The member this report is for
+	* \param data The data specific to the machine
 	*/
-	void Add(const ReportType &type, const std::string &name);
+	void Add(const ReportType &type, const std::string &name, const std::map<std::string, unsigned> &data);
 
 	//! Remove equipment report from the system and persist new data immediately
 	/*!

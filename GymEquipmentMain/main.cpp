@@ -17,6 +17,7 @@ int main()
 	{
 		std::cout << "Would you like to (L)ist reports, (A)dd a report, (R)emove a report, (P)rint report, or (Q)uit?\n";
 		input = GetInput()[0];
+		std::map<std::string, unsigned> data;
 
 		char type = '\0';
 		switch (input)
@@ -33,13 +34,21 @@ int main()
 			{
 			case 'T':
 			case 't':
+				std::cout << "Enter the Average Speed: ";
+				data.insert(std::pair<std::string, unsigned>("AvgSpeed", GetInputUnsigned()));
+				std::cout << "Enter the Distance: ";
+				data.insert(std::pair<std::string, unsigned>("Distance", GetInputUnsigned()));
 				std::cout << "Enter the name of the member: ";
-				manager.Add(EquipmentReportManager::ReportType::Treadmill, GetInput());
+				manager.Add(EquipmentReportManager::ReportType::Treadmill, GetInput(), data);
 				break;
 			case 'R':
 			case 'r':
+				std::cout << "Enter the Duration: ";
+				data.insert(std::pair<std::string, unsigned>("Duration", GetInputUnsigned()));
+				std::cout << "Enter the Reps Per Minute: ";
+				data.insert(std::pair<std::string, unsigned>("RepsPerMin", GetInputUnsigned()));
 				std::cout << "Enter the name of the member: ";
-				manager.Add(EquipmentReportManager::ReportType::RowingMachine, GetInput());
+				manager.Add(EquipmentReportManager::ReportType::RowingMachine, GetInput(), data);
 				break;
 			default:
 				std::cout << "Unrecognized equipment type.\n";

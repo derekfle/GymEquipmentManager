@@ -41,4 +41,7 @@
   <ItemGroup>
     <Text Include="EquipmentManager.proto" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="mainpage.dox" />
+  </ItemGroup>
 </Project>
