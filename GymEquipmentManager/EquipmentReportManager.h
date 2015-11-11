@@ -49,5 +49,11 @@ private:
 	std::map<unsigned, EquipmentReport*> equipmentCache; //! Contains all of the equipment reports in the system
 	class TreadmillReport *treadmill; //! treadmill report prototype
 	class RowingMachineReport *rowingMachine; //! Rowing maching report prototype
+
+	//! Saves reports to disk from the cache
+	void Save();
+
+	//! Loads reports from disk to the cache
+	void Load();
 };
 

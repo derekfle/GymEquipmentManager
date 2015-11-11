@@ -1,1 +1,28 @@
 syntax = "proto3";
+
+message Treadmill {
+
+	float distance = 1;
+	float avgSpeed = 2;
+}
+
+message RowingMachine {
+
+	float duration = 1;
+	float repsPerMin = 2;
+}
+
+message Equipment {
+
+	string name = 1;
+	string date = 2;
+
+	oneof EquipmentType {
+		Treadmill treadmill = 4;
+		RowingMachine rowingMachine = 5;
+	}
+}
+
+message EquipmentCache {
+	repeated Equipment equipment = 1;
+}

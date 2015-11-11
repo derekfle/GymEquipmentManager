@@ -11,6 +11,9 @@
     <ClCompile Include="RowingMachineReport.cpp">
       <Filter>EquipmentReports</Filter>
     </ClCompile>
+    <ClCompile Include="EquipmentManager.pb.cc">
+      <Filter>protobuf</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EquipmentReport.h">
@@ -23,10 +26,16 @@
     <ClInclude Include="RowingMachineReport.h">
       <Filter>EquipmentReports</Filter>
     </ClInclude>
+    <ClInclude Include="EquipmentManager.pb.h">
+      <Filter>protobuf</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EquipmentReports">
       <UniqueIdentifier>{3b7ed6e4-6708-4cc1-b70c-80a07e3350f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobuf">
+      <UniqueIdentifier>{49b05654-3438-44c1-b970-4dfcf4e33bbe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

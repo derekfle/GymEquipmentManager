@@ -4,12 +4,15 @@
 #include <iostream>
 #include <sstream>
 
+#include "EquipmentManager.pb.h"
 #include "EquipmentReportManager.h"
 
 EquipmentReportManager::EquipmentReportManager() :
 	treadmill(new class TreadmillReport),
 	rowingMachine(new class RowingMachineReport)
-{}
+{
+	Load();
+}
 
 EquipmentReportManager::~EquipmentReportManager()
 {
@@ -50,6 +53,8 @@ void EquipmentReportManager::Remove(const unsigned &id)
 	{
 		equipmentCache.erase(id);
 	}
+
+	Save();
 }
 
 void EquipmentReportManager::Add(const ReportType &type, const std::string &name)
@@ -94,6 +99,8 @@ void EquipmentReportManager::Add(const ReportType &type, const std::string &name
 	ss << std::put_time(&timeinfo, "%Y-%m-%d");
 
 	equipmentCache.at(id)->date = ss.str();
+
+	Save();
 }
 
 void EquipmentReportManager::Print(const unsigned &id)
@@ -106,4 +113,14 @@ void EquipmentReportManager::Print(const unsigned &id)
 	{
 		equipmentCache.at(id)->Print();
 	}
+}
+
+void EquipmentReportManager::Save()
+{
+	EquipmentCache cache; // TODO
+}
+
+void EquipmentReportManager::Load()
+{
+	EquipmentCache cache; // TODO
 }
