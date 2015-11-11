@@ -1,4 +1,8 @@
+#include <ctime>
+#include <chrono>
+#include <iomanip> 
 #include <iostream>
+#include <sstream>
 
 #include "EquipmentReportManager.h"
 
@@ -31,7 +35,7 @@ void EquipmentReportManager::List() const
 		{
 			std::cout << "Rowing Machine: ";
 		}
-		std::cout << "[id: " << it.first << ", name: " << it.second->name << "]" << std::endl;
+		std::cout << "[id: " << it.first << ", name: " << it.second->name << ", date: " << it.second->date << "]" << std::endl;
 	}
 	std::cout << "/**************************************************/\n";
 }
@@ -79,6 +83,17 @@ void EquipmentReportManager::Add(const ReportType &type, const std::string &name
 	}
 
 	equipmentCache.at(id)->name = name;
+
+	auto now = std::chrono::system_clock::now();
+	auto in_time_t = std::chrono::system_clock::to_time_t(now);
+
+	struct tm timeinfo;
+	localtime_s(&timeinfo, &in_time_t);
+
+	std::stringstream ss;
+	ss << std::put_time(&timeinfo, "%Y-%m-%d");
+
+	equipmentCache.at(id)->date = ss.str();
 }
 
 void EquipmentReportManager::Print(const unsigned &id)

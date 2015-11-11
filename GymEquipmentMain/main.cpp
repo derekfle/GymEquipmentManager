@@ -33,12 +33,12 @@ int main()
 			{
 			case 'T':
 			case 't':
-				std::cout << "Enter the name of the member?: ";
+				std::cout << "Enter the name of the member: ";
 				manager.Add(EquipmentReportManager::ReportType::Treadmill, GetInput());
 				break;
 			case 'R':
 			case 'r':
-				std::cout << "Enter the name of the member?: ";
+				std::cout << "Enter the name of the member: ";
 				manager.Add(EquipmentReportManager::ReportType::RowingMachine, GetInput());
 				break;
 			default:

@@ -18,5 +18,10 @@ public:
 
 	//! Prints the equipment report
 	virtual void Print() const override;
+
+private:
+
+	float duration; //! The duration of the session in seconds
+	float repsPerMin; //! The rows per minuts of the session
 };
 

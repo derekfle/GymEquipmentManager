@@ -18,5 +18,10 @@ public:
 
 	//! Prints the equipment report
 	virtual void Print() const override;
+
+private:
+
+	float avgSpeed; //! The average speed for this session
+	float distance; //! The distance of the session in kilometers
 };
 
