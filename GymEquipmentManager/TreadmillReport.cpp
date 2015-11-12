@@ -33,3 +33,13 @@ void TreadmillReport::Print() const
 	std::cout << "Average Speed: " << avgSpeed << std::endl;
 	std::cout << "/************/" << std::endl;
 }
+
+float TreadmillReport::GetAvgSpeed() const
+{
+	return avgSpeed;
+}
+
+float TreadmillReport::GetDistance() const
+{
+	return distance;
+}

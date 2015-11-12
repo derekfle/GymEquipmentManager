@@ -6,8 +6,8 @@
 
 #include "EquipmentReportManager.h"
 
-std::string GetInput();
-unsigned GetInputUnsigned();
+std::string GetInput(); // Gets user input as a string
+unsigned GetInputUnsigned(); // Gets user input as unsigned int
 
 int main()
 {

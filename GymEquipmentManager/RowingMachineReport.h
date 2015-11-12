@@ -12,19 +12,30 @@ public:
 
 	friend class EquipmentReportManager;
 
+	//! Constructor
 	RowingMachineReport();
 	//! Copy constructor
 	/*!
 	* \param that The object to be copied from
 	*/
 	RowingMachineReport(const RowingMachineReport &that);
+	//! Destructor
 	~RowingMachineReport();
 
 	//! Clones the equipment report
+	//! \return The cloned report
 	virtual EquipmentReport *Clone() const override;
 
 	//! Prints the equipment report
 	virtual void Print() const override;
+
+	//! Get the duration of the session
+	//! \return The duration
+	float GetDuration() const;
+
+	//! Get the repititions per minute of the session
+	//! \return The repitions per minute
+	float GetRepsPerMin() const;
 
 private:
 

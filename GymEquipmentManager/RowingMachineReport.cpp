@@ -33,3 +33,13 @@ void RowingMachineReport::Print() const
 	std::cout << "Duration: " << duration << std::endl;
 	std::cout << "/************/" << std::endl;
 }
+
+float RowingMachineReport::GetDuration() const
+{
+	return duration;
+}
+
+float RowingMachineReport::GetRepsPerMin() const
+{
+	return repsPerMin;
+}

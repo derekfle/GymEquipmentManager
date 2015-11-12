@@ -73,6 +73,7 @@ void EquipmentReportManager::Add(const ReportType &type, const std::string &name
 		return id;
 	};
 
+	// Add a report based on passed in type
 	unsigned id;
 	switch (type)
 	{
@@ -95,6 +96,7 @@ void EquipmentReportManager::Add(const ReportType &type, const std::string &name
 
 	equipmentCache.at(id)->name = name;
 
+	// Get the current date and set the report
 	auto now = std::chrono::system_clock::now();
 	auto in_time_t = std::chrono::system_clock::to_time_t(now);
 
@@ -191,10 +193,35 @@ void EquipmentReportManager::Load()
 		{
 			equipmentCache.insert(std::pair<unsigned, EquipmentReport*>(cache.equipment(i).id(), rowingMachine->Clone()));
 			RowingMachineReport *rowing = dynamic_cast<RowingMachineReport*>(equipmentCache.at(cache.equipment(i).id()));
-			rowing->duration = cache.equipment(i).rowingmachine().repspermin();
-			rowing->repsPerMin = cache.equipment(i).rowingmachine().duration();
+			rowing->repsPerMin = cache.equipment(i).rowingmachine().repspermin();
+			rowing->duration = cache.equipment(i).rowingmachine().duration();
 		}
 		equipmentCache.at((unsigned)cache.equipment(i).id())->date = cache.equipment(i).date();
 		equipmentCache.at((unsigned)cache.equipment(i).id())->name = cache.equipment(i).name();
 	}
+}
+
+unsigned EquipmentReportManager::Num() const
+{
+	return equipmentCache.size();
+}
+
+EquipmentReport* EquipmentReportManager::GetReportAtId(const unsigned &id) const
+{
+	if (equipmentCache.find(id) == equipmentCache.end())
+	{
+		std::cout << "Equipment report with id: " << id << " not found!\n";
+		return nullptr;
+	}
+	return equipmentCache.at(id)->Clone();
+}
+
+std::vector<EquipmentReport*> EquipmentReportManager::GetReports() const
+{
+	std::vector<EquipmentReport*> reports;
+	for (auto it : equipmentCache)
+	{
+		reports.push_back(it.second->Clone());
+	}
+	return reports;
 }

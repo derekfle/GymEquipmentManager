@@ -23,3 +23,13 @@ void EquipmentReport::Print() const
 	std::cout << "Member Name: " << name << std::endl;
 	std::cout << "Date: " << date << std::endl;
 }
+
+std::string EquipmentReport::GetName() const
+{
+	return name;
+}
+
+std::string EquipmentReport::GetDate() const
+{
+	return date;
+}

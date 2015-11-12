@@ -13,7 +13,9 @@ class EquipmentReportManager
 {
 public:
 
+	//! Constructor
 	EquipmentReportManager();
+	//! Destructor
 	~EquipmentReportManager();
 
 	//! The different equipment types supported
@@ -25,6 +27,10 @@ public:
 
 	//! Lists all equipment reports in the system
 	void List() const;
+
+	//! Returns the number of equipment reports in the system
+	//! \returns Number of reports in the system
+	unsigned Num() const;
 
 	//! Remove equipment from the system and persist new data immediately
 	/*!
@@ -45,6 +51,19 @@ public:
 	* \param id The id of the equipment report to be printed
 	*/
 	void Print(const unsigned &id);
+
+	//! Returns equipment report with given id
+	/*!
+	* \param id The id of the equipment report to be cloned
+	* \returns A cloned report (Caller takes ownership)
+	*/
+	EquipmentReport* GetReportAtId(const unsigned &id) const;
+
+	//! Returns all equipment reports
+	/*!
+	* \returns A vector of all cloned reports (Caller takes ownership)
+	*/
+	std::vector<EquipmentReport*> GetReports() const;
 
 private:
 
