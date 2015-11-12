@@ -1,0 +1,25 @@
+/***********************************************/
+INSTALLATION INSTRUCTIONS FOR GymEquipmentManager
+/***********************************************/
+
+The process to build, install and use the GymEquipmentManager has been made
+very painless by including everything necessary for the project on GitHub.
+This includes all necessary libraries.
+
+Libraries used:
+- Google Protocol Buffers 2.6.1
+- Google Test Framework 1.7.0
+
+Instructions:
+
+1. Install Visual Studio 2013 Community (the 2015 version may work, no promises)
+2. Clone or download the entire repository from the GitHub page
+3. Open GymEquipmentManager.sln in Visual Studio 2013 Community 
+4. Build the solution in either Debug or Release configurations (32-bit ONLY)
+
+NOTES:
+
+- Google Protocol Buffers has been integrated into the IDE via a custom build step,
+  simply change the .proto file in the IDE and build the solution as normal for generate
+  new files.
+- The GymEquipmentManagerMain project is simply a runner for the GymEquipmentManager library
