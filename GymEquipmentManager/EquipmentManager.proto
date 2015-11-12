@@ -1,23 +1,21 @@
-syntax = "proto3";
-
 package proto;
 
 message Equipment {
 
-	string name = 1;
-	string date = 2;
-	int32 id = 3;
+	required string name = 1;
+	required string date = 2;
+	required int32 id = 3;
 
 	message Treadmill {
 
-		float distance = 1;
-		float avgSpeed = 2;
+		required float distance = 1;
+		required float avgSpeed = 2;
 	}
 
 	message RowingMachine {
 
-		float duration = 1;
-		float repsPerMin = 2;
+		required float duration = 1;
+		required float repsPerMin = 2;
 	}
 
 	oneof EquipmentType {
