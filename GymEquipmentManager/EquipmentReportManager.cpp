@@ -4,7 +4,6 @@
 #include <iomanip> 
 #include <iostream>
 #include <sstream>
-#include <vector>
 
 #include "EquipmentManager.pb.h"
 #include "EquipmentReportManager.h"

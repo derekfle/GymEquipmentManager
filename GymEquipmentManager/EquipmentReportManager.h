@@ -5,6 +5,7 @@
 #pragma once
 
 #include <map>
+#include <vector>
 
 #include "TreadmillReport.h"
 #include "RowingMachineReport.h"
