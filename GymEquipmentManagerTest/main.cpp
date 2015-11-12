@@ -202,6 +202,9 @@ TEST(EquipmentReportTest, CloneTest)
 	{
 		delete it;
 	}
+
+	// Remove the cache file so next tests starts clean
+	std::remove("cache.dat");
 }
 
 int main(int argc, char **argv)
