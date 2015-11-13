@@ -39,7 +39,7 @@ public:
 
 protected:
 
-	std::string name; //! Name of the member using equipment
-	std::string date; //! Date the report was generated
+	std::string name; //!< Name of the member using equipment
+	std::string date; //!< Date the report was generated
 };
 
