@@ -20,6 +20,6 @@ Instructions:
 NOTES:
 
 - Google Protocol Buffers has been integrated into the IDE via a custom build step,
-  simply change the .proto file in the IDE and build the solution as normal for generate
+  simply change the .proto file in the IDE and build the solution as normal to generate
   new files.
 - The GymEquipmentManagerMain project is simply a runner for the GymEquipmentManager library
